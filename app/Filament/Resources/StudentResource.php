@@ -56,6 +56,11 @@ class StudentResource extends Resource
         'student' => [
             'name' => mb_convert_encoding($student->name, 'UTF-8', 'UTF-8'),
             'email' => mb_convert_encoding($student->email, 'UTF-8', 'UTF-8'),
+            'dob' => mb_convert_encoding($student->dob, 'UTF-8', 'UTF-8'),
+            'graduation_date' => mb_convert_encoding($student->graduation_date, 'UTF-8', 'UTF-8'),
+            'father_name' => mb_convert_encoding($student->father_name, 'UTF-8', 'UTF-8'),
+            'mother_name' => mb_convert_encoding($student->mother_name, 'UTF-8', 'UTF-8'),
+
         ],
         'academicRecords' => $academicRecords->map(function ($record) {
             return [

@@ -26,45 +26,59 @@ class AcademicRecordResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\Select::make('student_id')
-                ->label('Student')
-                ->relationship('student', 'name')  
-                // This assumes the `Student` model has a `name` field
-                ->required()
-                ->searchable()
-                ->getSearchResultsUsing(function (string $search) {
-                    return \App\Models\Student::query()
-                        ->where('name', 'like', "%{$search}%")
-                        ->orWhere('email', 'like', "%{$search}%")
-                        ->limit(50)
-                        ->pluck('name', 'id')
-                        ->mapWithKeys(function ($name, $id) {
-                            $student = \App\Models\Student::find($id);
-                            return [$id => "{$name} ({$student->email})"];
-                        });
-                })
-                ->getOptionLabelUsing(fn ($value) => \App\Models\Student::find($value)?->name ?? 'N/A')
-                ->placeholder('Search by name or email'),
+    ->schema([
+        Forms\Components\Select::make('student_id')
+            ->label('Student')
+            ->relationship('student', 'name')  
+            ->required()
+            ->searchable()
+            ->getSearchResultsUsing(function (string $search) {
+                return \App\Models\Student::query()
+                    ->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->limit(50)
+                    ->pluck('name', 'id')
+                    ->mapWithKeys(function ($name, $id) {
+                        $student = \App\Models\Student::find($id);
+                        return [$id => "{$name} ({$student->email})"];
+                    });
+            })
+            ->getOptionLabelUsing(fn ($value) => \App\Models\Student::find($value)?->name ?? 'N/A')
+            ->placeholder('Search by name or email'),
 
-            TextInput::make('coursetitle')
-                ->label('Course Title')
-                ->required()
-                ->maxLength(255),
-            TextInput::make('grade')
-                ->required()
-                ->maxLength(10),
-            Forms\Components\TextInput::make('credit')
-                ->required(),
-          TextInput::make('schoolyear')
-                ->label('School Year')
-                //->displayFormat('Y')
-                ->required(),
-            TextInput::make('gradelevel')
-                ->label('Grade Level')
-                ->required()
-                ->maxLength(50),
-            ]);
+        Forms\Components\Select::make('coursetitle')
+            ->label('Course')
+            //->relationship('course', 'name') // Assuming the AcademicRecord model has a `course` relationship
+            ->options(\App\Models\Course::query()->pluck('name', 'name')) 
+            ->required()
+            ->searchable()
+            ->reactive() // Make it reactive to fetch course credits
+            ->placeholder('Select a course')
+            ->afterStateUpdated(function (callable $set, $state) {
+                if ($state) {
+                    $course = \App\Models\Course::where('name', $state)->first();
+            $set('credit', $course?->credits ?? 0); // Set default to 0 if no credits are found
+                }
+            }),
+        Forms\Components\TextInput::make('credit')
+        ->label('Credits')
+        ->required(),
+       // ->disabled(), // Ensure this field cannot be manually edited
+        
+        TextInput::make('grade')
+            ->required()
+            ->maxLength(10),
+
+        TextInput::make('schoolyear')
+            ->label('School Year')
+            ->required(),
+
+        TextInput::make('gradelevel')
+            ->label('Grade Level')
+            ->required()
+            ->maxLength(50),
+    ]);
+
     }
 
     public static function table(Table $table): Table
