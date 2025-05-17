@@ -58,8 +58,5 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
-    }
+    
 }
