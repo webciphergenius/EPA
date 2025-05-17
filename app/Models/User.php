@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        Log::info('canAccessPanel called for user: ' . $this->email);
+        return true;
+    }
 }
