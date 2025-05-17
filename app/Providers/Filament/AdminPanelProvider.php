@@ -58,4 +58,8 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+    public function canAccessPanel(): bool
+    {
+        return auth()->check(); // ✅ Your access logic
+    }
 }
