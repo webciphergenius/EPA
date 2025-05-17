@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Support\Facades\Log;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Filament\Panel;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
