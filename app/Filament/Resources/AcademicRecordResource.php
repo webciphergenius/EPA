@@ -16,6 +16,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\NumberInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Select;
 
 class AcademicRecordResource extends Resource
 {
@@ -65,18 +66,51 @@ class AcademicRecordResource extends Resource
         ->required(),
        // ->disabled(), // Ensure this field cannot be manually edited
         
-        TextInput::make('grade')
-            ->required()
-            ->maxLength(10),
+       Select::make('grade')
+    ->label('Grade')
+    ->options([
+        'A+' => 'A+',
+        'A' => 'A',
+        'A-' => 'A-',
+        'B+' => 'B+',
+        'B' => 'B',
+        'B-' => 'B-',
+        'C+' => 'C+',
+        'C' => 'C',
+        'C-' => 'C-',
+        'D+' => 'D+',
+        'D' => 'D',
+        'D-' => 'D-',
+        'F' => 'F',
+        'I' => 'I',
+    ])
+    ->default('A') // Set default value here
+    ->required(),
 
-        TextInput::make('schoolyear')
-            ->label('School Year')
-            ->required(),
+    Select::make('schoolyear')
+    ->label('School Year')
+    ->options([
+        '2024-2025' => '2024-2025',
+        '2025-2026' => '2025-2026',
+        '2026-2027' => '2026-2027',
+        '2027-2028' => '2027-2028',
+        '2028-2029' => '2028-2029',
+        '2029-2030' => '2029-2030',
+        '2030-2031' => '2030-2031',
+    ])
+    ->default('2024-2025'),
 
-        TextInput::make('gradelevel')
-            ->label('Grade Level')
-            ->required()
-            ->maxLength(50),
+        
+Select::make('gradelevel')
+->label('Grade Level')
+->options([
+    '9TH' => '9TH',
+    '10TH' => '10TH',
+    '11TH' => '11TH',
+    '12TH' => '12TH',
+])
+->default('9TH') // Optional default
+->required(),
     ]);
 
     }
