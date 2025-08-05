@@ -66,6 +66,22 @@ class StudentResource extends Resource
     );
 }
 
+public static function previewStudentPdf($record)
+{
+    $student = $record;
+    $academicRecords = $student->academicRecords;
+
+    $pdf = Pdf::loadView('pdf.student_report', [
+        'student' => $student,
+        'academicRecords' => $academicRecords,
+    ]);
+
+    return response($pdf->output(), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="student_report.pdf"',
+    ]);
+}
+
     public static function table(Table $table): Table
     {
         return $table
@@ -87,6 +103,10 @@ class StudentResource extends Resource
                 Tables\Actions\Action::make('exportPdf')
                 ->label('Export as PDF')
                 ->action(fn ($record) => static::exportStudentPdf($record)),
+                Tables\Actions\Action::make('previewPdf')
+                ->label('Preview')
+                ->action(fn ($record) => static::previewStudentPdf($record))
+                ->url(fn ($record) => route('filament.admin.resources.students.preview', $record), true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
