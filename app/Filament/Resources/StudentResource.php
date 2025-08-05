@@ -62,15 +62,7 @@ class StudentResource extends Resource
             'mother_name' => mb_convert_encoding($student->mother_name, 'UTF-8', 'UTF-8'),
 
         ],
-        'academicRecords' => $academicRecords->map(function ($record) {
-            return [
-                'coursetitle' => mb_convert_encoding($record->coursetitle, 'UTF-8', 'UTF-8'),
-                'grade' => mb_convert_encoding($record->grade, 'UTF-8', 'UTF-8'),
-                'credit' => mb_convert_encoding($record->credit, 'UTF-8', 'UTF-8'),
-                'schoolyear' => mb_convert_encoding($record->schoolyear, 'UTF-8', 'UTF-8'),
-                'gradelevel' => mb_convert_encoding($record->gradelevel, 'UTF-8', 'UTF-8'),
-            ];
-        }),
+        'academicRecords' => $academicRecords,
     ]);
     return response()->streamDownload(
         fn () => print($pdf->output()),

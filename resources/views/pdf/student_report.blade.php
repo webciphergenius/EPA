@@ -159,7 +159,7 @@
 			<tbody>
    @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record['gradelevel'] === '9th');
+        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '9th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -188,8 +188,8 @@
 @endphp
     @foreach($filteredRecords as $record)
         @php
-            $grade = $record['grade'];
-            $credit = $record['credit'];
+            $grade = $record->grade;
+            $credit = $record->credit;
 
             // Add to total credits attempted
             $totalCreditsAttempted += $credit;
@@ -205,9 +205,9 @@
         
 @endphp
         <tr>
-            <td colspan="10">{{ $record['coursetitle'] }}</td>
-            <td colspan="1">{{ $record['grade'] }}</td>
-            <td colspan="1">{{ $record['credit'] }}</td>
+            <td colspan="10">{{ $record->coursetitle }}</td>
+            <td colspan="1">{{ $record->grade }}</td>
+            <td colspan="1">{{ $record->credit }}</td>
         </tr>
     @endforeach
 
@@ -244,7 +244,7 @@
 			<tbody>
    @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record['gradelevel'] === '10th');
+        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '10th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -273,8 +273,8 @@
 @endphp
     @foreach($filteredRecords as $record)
       @php
-            $grade = $record['grade'];
-            $credit = $record['credit'];
+            $grade = $record->grade;
+            $credit = $record->credit;
 
             // Add to total credits attempted
             $totalCreditsAttempted += $credit;
@@ -290,9 +290,9 @@
 			@endphp
 
         <tr>
-            <td colspan="10">{{ $record['coursetitle'] }}</td>
-            <td colspan="1">{{ $record['grade'] }}</td>
-            <td colspan="1">{{ $record['credit'] }}</td>
+            <td colspan="10">{{ $record->coursetitle }}</td>
+            <td colspan="1">{{ $record->grade }}</td>
+            <td colspan="1">{{ $record->credit }}</td>
         </tr>
     @endforeach
 
@@ -335,7 +335,7 @@
 			<tbody>
     @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record['gradelevel'] === '11th');
+        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '11th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -364,8 +364,8 @@
 
     @foreach($filteredRecords as $record)
         @php
-            $grade = $record['grade'];
-            $credit = $record['credit'];
+            $grade = $record->grade;
+            $credit = $record->credit;
 
             // Add to total credits attempted
             $totalCreditsAttempted += $credit;
@@ -381,9 +381,9 @@
         @endphp
 
         <tr>
-            <td colspan="10">{{ $record['coursetitle'] }}</td>
-            <td colspan="1">{{ $record['grade'] }}</td>
-            <td colspan="1">{{ $record['credit'] }}</td>
+            <td colspan="10">{{ $record->coursetitle }}</td>
+            <td colspan="1">{{ $record->grade }}</td>
+            <td colspan="1">{{ $record->credit }}</td>
         </tr>
     @endforeach
 
@@ -417,7 +417,7 @@
 			<tbody>
     @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record['gradelevel'] === '12th');
+        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '12th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -446,8 +446,8 @@
 
     @foreach($filteredRecords as $record)
         @php
-            $grade = $record['grade'];
-            $credit = $record['credit'];
+            $grade = $record->grade;
+            $credit = $record->credit;
 
             // Add to total credits attempted
             $totalCreditsAttempted += $credit;
@@ -463,9 +463,9 @@
         @endphp
 
         <tr>
-            <td colspan="10">{{ $record['coursetitle'] }}</td>
-            <td colspan="1">{{ $record['grade'] }}</td>
-            <td colspan="1">{{ $record['credit'] }}</td>
+            <td colspan="10">{{ $record->coursetitle }}</td>
+            <td colspan="1">{{ $record->grade }}</td>
+            <td colspan="1">{{ $record->credit }}</td>
         </tr>
     @endforeach
 
