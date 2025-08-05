@@ -25,4 +25,28 @@ class AcademicRecord extends Model
 {
     return $this->belongsTo(Course::class);
 }
+    public function getCoursetitleAttribute($value)
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+    }
+
+    public function getGradeAttribute($value)
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+    }
+
+    public function getCreditAttribute($value)
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+    }
+
+    public function getSchoolyearAttribute($value)
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+    }
+
+    public function getGradelevelAttribute($value)
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+    }
 }

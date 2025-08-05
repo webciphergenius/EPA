@@ -122,12 +122,12 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>{{ $student['name'] }}</td>
-				<td>{{ $student['dob'] }}</td>
-				<td colspan="4">{{ $student['email'] }}</td>
-				<td colspan="2">{{ $student['graduation_date'] }}</td>
-				<td colspan="2">Father: {{ $student['father_name'] }}</td>
-				<td colspan="2">Mother: {{ $student['mother_name'] }}</td>
+				<td>{{ $student->name }}</td>
+				<td>{{ $student->dob }}</td>
+				<td colspan="4">{{ $student->email }}</td>
+				<td colspan="2">{{ $student->graduation_date }}</td>
+				<td colspan="2">Father: {{ $student->father_name }}</td>
+				<td colspan="2">Mother: {{ $student->mother_name }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -159,7 +159,7 @@
 			<tbody>
    @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '9th');
+        $filteredRecords = $academicRecords->filter(fn($record) => strtolower($record->gradelevel) === '9th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -244,7 +244,7 @@
 			<tbody>
    @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '10th');
+        $filteredRecords = $academicRecords->filter(fn($record) => strtolower($record->gradelevel) === '10th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -335,7 +335,7 @@
 			<tbody>
     @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '11th');
+        $filteredRecords = $academicRecords->filter(fn($record) => strtolower($record->gradelevel) === '11th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;
@@ -417,7 +417,7 @@
 			<tbody>
     @php
         // Filter records for '11th grade'
-        $filteredRecords = $academicRecords->filter(fn($record) => $record->gradelevel === '12th');
+        $filteredRecords = $academicRecords->filter(fn($record) => strtolower($record->gradelevel) === '12th');
 
         // Initialize variables for calculations
         $totalCreditsAttempted = 0;

@@ -16,6 +16,8 @@ use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Log;
+
 class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
@@ -51,24 +53,17 @@ class StudentResource extends Resource
 {
     $student = $record;
     $academicRecords = $student->academicRecords;
-    
-    $pdf = Pdf::loadView('pdf.student_report', [
-        'student' => [
-            'name' => mb_convert_encoding($student->name, 'UTF-8', 'UTF-8'),
-            'email' => mb_convert_encoding($student->email, 'UTF-8', 'UTF-8'),
-            'dob' => mb_convert_encoding($student->dob, 'UTF-8', 'UTF-8'),
-            'graduation_date' => mb_convert_encoding($student->graduation_date, 'UTF-8', 'UTF-8'),
-            'father_name' => mb_convert_encoding($student->father_name, 'UTF-8', 'UTF-8'),
-            'mother_name' => mb_convert_encoding($student->mother_name, 'UTF-8', 'UTF-8'),
+    Log::info('Academic records:', $academicRecords->toArray());
 
-        ],
+    $pdf = Pdf::loadView('pdf.student_report', [
+        'student' => $student,
         'academicRecords' => $academicRecords,
     ]);
+
     return response()->streamDownload(
         fn () => print($pdf->output()),
         'student_report.pdf'
     );
-    
 }
 
     public static function table(Table $table): Table
