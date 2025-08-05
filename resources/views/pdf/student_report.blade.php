@@ -221,7 +221,7 @@
         <td colspan="12" style="text-align: right;">
             Credits Awarded: {{ $totalCreditsAwarded }} <br>
             Credits Attempted: {{ $totalCreditsAttempted }} <br>
-            Year Unweighted GPA: N/A <br>
+            Year Unweighted GPA: {{ number_format($unweightedGPA, 2) }} <br>
             Year Weighted GPA: {{ number_format($weightedGPA, 2) }}
         </td>
     </tr>
