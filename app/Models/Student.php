@@ -14,6 +14,8 @@ class Student extends Model
         'graduation_date',
         'mother_name',
         'father_name',
+        'address',
+        'phone_number',
     ];
     protected $casts = [
         'dob' => 'date',

@@ -121,7 +121,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+			            <tr>
 				<td>{{ $student->name }}</td>
 				<td>{{ $student->dob }}</td>
 				<td colspan="4">{{ $student->email }}</td>
@@ -129,6 +129,7 @@
 				<td colspan="2">Father: {{ $student->father_name }}</td>
 				<td colspan="2">Mother: {{ $student->mother_name }}</td>
 			</tr>
+           
 		</tbody>
 	</table>
 	

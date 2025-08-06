@@ -47,6 +47,12 @@ class StudentResource extends Resource
                 TextInput::make('father_name')
                     ->label("Father's Name")
                     ->maxLength(255),
+                TextInput::make('address')
+                    ->label('Address')
+                    ->maxLength(255),
+                TextInput::make('phone_number')
+                    ->label('Phone Number')
+                    ->maxLength(255),
             ]);
     }
     public static function exportStudentPdf($record)
@@ -92,6 +98,8 @@ public static function previewStudentPdf($record)
                 TextColumn::make('graduation_date')->label('Graduation Date')->date(),
                 TextColumn::make('mother_name')->label("Mother's Name"),
                 TextColumn::make('father_name')->label("Father's Name"),
+                TextColumn::make('address')->label('Address'),
+                TextColumn::make('phone_number')->label('Phone Number'),
                 
             ])
             ->filters([
