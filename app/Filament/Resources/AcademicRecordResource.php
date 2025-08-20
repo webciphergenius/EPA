@@ -90,6 +90,7 @@ class AcademicRecordResource extends Resource
     Select::make('schoolyear')
     ->label('School Year')
     ->options([
+        '2020-2021' => '2020-2021',
         '2021–2022' => '2021–2022',
         '2022–2023' => '2022–2023',
         '2023–2024' => '2023–2024',
