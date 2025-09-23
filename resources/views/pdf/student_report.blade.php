@@ -71,13 +71,13 @@
 		width: 24%;
 	}
     .tablebottom input[type="signature"] {
-        width: 66%;
+        width: 64%;
     }
 	.tablebottom {
 		background: #effaff;
 		padding: 20px;
 		border: 1px solid #333;
-		transform: translateY(15px);
+		transform: translateY(5px);
 	}
 	.tablebottom p {
 		padding-bottom: 40px;
@@ -497,7 +497,7 @@
 		<p style="font-size: 12px;"><em>I herebycertify and affirm that this is the official transcript and record of Aleksandre Gogiashvili in the academic studies of 2020-2024</em></p>
 		<form>
 			<label>Signature</label>
-            <img src="{{ public_path('stemp-img.png') }}" alt="Signature" style="width: 150px; margin-right: -190px; margin-left: 60px;">
+            <img src="{{ public_path('stemp-img.png') }}" alt="Signature" style="width: 150px; margin: -40px -190px 0 60px;">
 			<input type="signature">&nbsp;&nbsp;&nbsp;&nbsp;
 			<label>Date</label><input type="text">
 		</form>
