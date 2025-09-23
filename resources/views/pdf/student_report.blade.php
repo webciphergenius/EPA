@@ -71,7 +71,7 @@
 		width: 24%;
 	}
     .tablebottom input[type="signature"] {
-        width: 64%;
+        width: 50%;
     }
 	.tablebottom {
 		background: #effaff;
