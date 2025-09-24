@@ -57,10 +57,13 @@ p {
 .tabletwo {
 	clear: both;
 }
-/* .column {
+.column {
     float: left;
     width: 45%; 
-} */
+}
+.pdffirstFooter {
+    clear: both;
+}
 .mainTableSecond p {
     font-size: 10px;
     line-height: 1.5;
