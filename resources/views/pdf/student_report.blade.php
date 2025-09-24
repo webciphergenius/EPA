@@ -68,6 +68,15 @@ p {
 .secondHead {
     color: #295293;
 }
+.column:nth-child(2), .column:nth-child(4) {
+    padding-left: 5%;
+}
+.column:nth-child(1), .column:nth-child(3) {
+    padding-right: 5%;
+}
+.column:nth-child(3) {
+    clear: both;
+}
 </style>
 </head>
 <body>
@@ -107,7 +116,7 @@ p {
             </table>
         </div>
 
-        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table;">
+        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table; width: 100%">
             <table width="100%">
                 <tbody>
                     <tr>
@@ -176,7 +185,7 @@ p {
                         $nextYear = $year + 1;
                     @endphp
                     
-                    <div class="column" style="float: left; width: 45%; padding-{{ $index % 2 == 0 ? 'right' : 'left' }}:5%; padding-bottom: 8%;">
+                    <div class="column" style="float: left; width: 45%; padding-bottom: 8%;">
                         <table width="100%">
                             <tbody>
                                 <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
