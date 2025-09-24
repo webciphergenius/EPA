@@ -120,7 +120,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
