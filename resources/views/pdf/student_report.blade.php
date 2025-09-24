@@ -43,7 +43,7 @@
 .headTxt h2 {
     letter-spacing: 1px;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 22px;
     margin-bottom: 12px;
 }
 p {
@@ -107,7 +107,7 @@ p {
             </table>
         </div>
 
-        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table; width: 96.5%;">
+        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table;">
             <table width="100%">
                 <tbody>
                     <tr>
@@ -176,52 +176,80 @@ p {
                         $nextYear = $year + 1;
                     @endphp
                     
-                    <div class="column" style="padding-{{ $index % 2 == 0 ? 'right' : 'left' }}:5%; padding-bottom: 8%;">
-                        <table width="100%">
-                            <tbody>
-                                <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
-                                <tr>
-                                    <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
-                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
-                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
-                                </tr>
-                                
-                                @forelse($records as $record)
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
-                                </tr>
-                                @empty
-                                @for($i = 0; $i < 8; $i++)
-                                <tr>
-                                    <td colspan="8" style="text-align: left;"></td>
-                                    <td colspan="1" style="text-align: center;"></td>
-                                    <td colspan="1" style="text-align: center;"></td>
-                                </tr>
-                                @endfor
-                                @endforelse
-                                
-                                <tr>
-                                    <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                    <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                    <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term Credits:</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <div class="column" style="padding-right:5%; padding-bottom: 8%;">
+                    <table width="100%">
+                        <tbody>
+                            <td colspan="12" style="text-align: center; font-size: 18px; padding-bottom: 10px;">Grade 9 Year 2021-2022</td>
+                            <tr>
+                                <td colspan="8" style="text-align: left; font-size: 17px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 17px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 17px; text-decoration: underline;">Grade</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">N/A</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">N/A</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term Credits:</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">0.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 @endforeach
             </div>
         </div>
