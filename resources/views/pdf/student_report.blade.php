@@ -98,7 +98,7 @@ p {
         </div>
 
         <div class="pdfsubhead">
-            <table width="100%" style="border-top: 2px solid #000; padding: 20px 0;">
+            <table style="width: 100%; border-top: 2px solid #000; padding: 20px 0;">
                 <tbody>
                     <tr>
                         <td>Name: {{ $student->name }}</td>
@@ -119,14 +119,10 @@ p {
             </table>
         </div>
 
-        <div class="pdfmain" style="padding: 10px; display: grid;">
-            <table width="100%">
-                <tbody>
-                    <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="pdfmain" style="padding: 10px; display: block;">
+            <div style="width: 100%; text-align: center;">
+                <h4>ACADEMIC RECORD</h4>
+            </div>
 
             <div class="tabletwo" style="clear: both;">
                 @php
@@ -189,49 +185,48 @@ p {
                     @endphp
                     
                     <div class="column" style="padding-bottom: 8%;">
-                        <table width="100%">
+                        <table style="width: 100%;">
                             <tbody>
                                 <tr>
                                     <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
-                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
-                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
+                                    <td colspan="2" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                    <td colspan="2" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                                 </tr>
-                                
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                                    <td colspan="2" style="text-align: center;">{{ $record->credit }}</td>
+                                    <td colspan="2" style="text-align: center;">{{ $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
                                 <tr>
                                     <td colspan="8" style="text-align: left;"></td>
-                                    <td colspan="1" style="text-align: center;"></td>
-                                    <td colspan="1" style="text-align: center;"></td>
+                                    <td colspan="2" style="text-align: center;"></td>
+                                    <td colspan="2" style="text-align: center;"></td>
                                 </tr>
                                 @endfor
                                 @endforelse
                                 
                                 <tr>
                                     <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                    <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                    <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                    <td colspan="2" style="text-align: center; padding: 30px 10px;"></td>
+                                    <td colspan="2" style="text-align: center; padding: 30px 10px;"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
+                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
+                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="8" style="text-align: left;">Term Credits:</td>
-                                    <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
+                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -241,7 +236,7 @@ p {
         </div>
 
         <div class="pdffirstFooter">
-            <table width="100%" style="padding-top: 30px;">
+            <table style="width: 100%; padding-top: 30px;">
                 <tbody>
                     <tr>
                         <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">OFFICIAL SCHOOL USE</td>
@@ -250,7 +245,7 @@ p {
             </table>
             <div class="tabletwo">
                 <div class="column" style="padding-right:5%; padding-bottom: 8%;">
-                    <table width="100%">
+                    <table style="width: 100%;">
                         <tbody>
                             @php
                                 // Calculate cumulative GPAs
@@ -318,7 +313,7 @@ p {
             Email: contact@eliteprepacademy.org</p>
     </div>
     <div class="pdfsecondTable">
-        <table width="100%" style="padding-top: 30px;">
+        <table style="width: 100%; padding-top: 30px;">
             <tbody>
                 <tr>
                     <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grading System</td>
