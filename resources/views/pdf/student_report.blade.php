@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transcript</title>
-<style>
-* {
+    <style>
+	* {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 10px;
+		font-size: 10px;
     line-height: 1.2;
 }
+
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
     padding: 90px 70px 30px;
+}
+.column:nth-child(2), .columns:nth-child(2) {
+    padding-left: 5%;
+}
+.column:nth-child(1), .columns:nth-child(1) {
+    padding-right: 5%;
 }
 .mainTableSecond {
     background: url({{ public_path('secondBG.png') }}) no-repeat;
@@ -23,8 +30,8 @@
     padding: 50px 70px;
     color: #295293;
     background-position: center;
-}
-.pdfHead {
+	}
+	.pdfHead {
     vertical-align: middle;
     padding: 0 30px;
 }
@@ -53,17 +60,23 @@ p {
 .pdfsubhead {
     clear: both;
     padding-top: 25px;
-}
+	}
 .tabletwo {
 	clear: both;
 }
+.pdfmain {
+   
+    
+}
 .column {
-    float: left;
-    width: 45%; 
+   float: left;
+    width: 45%;
+    
 }
-.pdffirstFooter {
-    clear: both;
-}
+
+
+
+
 .mainTableSecond p {
     font-size: 10px;
     line-height: 1.5;
@@ -71,16 +84,8 @@ p {
 .secondHead {
     color: #295293;
 }
-.column:nth-child(2), .column:nth-child(4) {
-    padding-left: 5%;
-}
-.column:nth-child(1), .column:nth-child(3) {
-    padding-right: 5%;
-}
-.column:nth-child(3) {
-    clear: both;
-}
-</style>
+
+    </style> 
 </head>
 <body>
 <div class="mainTableFirst">
@@ -88,43 +93,47 @@ p {
         <div class="pdfHead">
             <div class="headImg"><img src="{{ public_path('script-logo.png') }}"></div>
             <div class="headTxt">
-                <h2>ELITE PREPARATORY ACADEMY</h2>
+		<h2>ELITE PREPARATORY ACADEMY</h2>
                 <p>Office of the Registrar <br>
                     452 Lakeside Blvd <br>
                     Hopatcong, NJ 07843 <br>
                     Phone: (732)397-7988 <br>
                 Email: contact@eliteprepacademy.org</p>
             </div>
-        </div>
+	</div>
 
         <div class="pdfsubhead">
-            <table style="width: 100%; border-top: 2px solid #000; padding: 20px 0;">
+            <table width="100%" style="border-top: 2px solid #000; padding: 20px 0;">
                 <tbody>
                     <tr>
                         <td>Name: {{ $student->name }}</td>
                         <td>Date of Birth: {{ $student->dob }}</td>
                         <td>Guardian: {{ $student->father_name ?? 'N/A' }}</td>
-                    </tr>
-                    <tr>
+			</tr>
+			<tr>
                         <td>Address: {{ $student->address ?? 'N/A' }}</td>
                         <td>Gender: {{ $student->gender ?? 'N/A' }}</td>
                         <td>Counselor: {{ $student->counselor ?? 'N/A' }}</td>
-                    </tr>
+			</tr>
                     <tr>
                         <td></td>
                         <td>Date of Graduation: {{ $student->graduation_date ?? 'N/A' }}</td>
                         <td></td>
-                    </tr>
-                </tbody>
-            </table>
+			</tr>
+		</tbody>
+	</table>
         </div>
 
-        <div class="pdfmain" style="padding: 10px; display: block;">
-            <div style="width: 100%; text-align: center;">
-                <h4>ACADEMIC RECORD</h4>
-            </div>
-
-            <div class="tabletwo" style="clear: both;">
+        <div class="pdfmain" >
+            <table width="100%">
+		<tbody>
+			<tr>
+                        <td colspan="2" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
+			</tr>
+		</tbody>
+	</table>
+	
+            <div class="tabletwo">
                 @php
                     // Group academic records by grade level
                     $gradeLevels = ['9th', '10th', '11th', '12th'];
@@ -135,26 +144,28 @@ p {
                     }
                     
                     // Define grade points for calculations
-                    $gradePoints = [
-                        'A+' => ['unweighted' => 4.00, 'weighted' => 5.33],
-                        'A'  => ['unweighted' => 4.00, 'weighted' => 5.00],
-                        'A-' => ['unweighted' => 3.67, 'weighted' => 4.67],
-                        'B+' => ['unweighted' => 3.33, 'weighted' => 4.33],
-                        'B'  => ['unweighted' => 3.00, 'weighted' => 4.00],
-                        'B-' => ['unweighted' => 2.67, 'weighted' => 3.67],
-                        'C+' => ['unweighted' => 2.33, 'weighted' => 3.33],
-                        'C'  => ['unweighted' => 2.00, 'weighted' => 3.00],
-                        'C-' => ['unweighted' => 1.67, 'weighted' => 2.67],
-                        'D+' => ['unweighted' => 1.33, 'weighted' => 2.33],
-                        'D'  => ['unweighted' => 1.00, 'weighted' => 2.00],
-                        'D-' => ['unweighted' => 0.67, 'weighted' => 1.67],
-                        'F'  => ['unweighted' => 0.00, 'weighted' => 0.00],
-                        'I'  => ['unweighted' => 0.00, 'weighted' => 0.00],
-                    ];
+        $gradePoints = [
+            'A+' => ['unweighted' => 4.00, 'weighted' => 5.33],
+            'A'  => ['unweighted' => 4.00, 'weighted' => 5.00],
+            'A-' => ['unweighted' => 3.67, 'weighted' => 4.67],
+            'B+' => ['unweighted' => 3.33, 'weighted' => 4.33],
+            'B'  => ['unweighted' => 3.00, 'weighted' => 4.00],
+            'B-' => ['unweighted' => 2.67, 'weighted' => 3.67],
+            'C+' => ['unweighted' => 2.33, 'weighted' => 3.33],
+            'C'  => ['unweighted' => 2.00, 'weighted' => 3.00],
+            'C-' => ['unweighted' => 1.67, 'weighted' => 2.67],
+            'D+' => ['unweighted' => 1.33, 'weighted' => 2.33],
+            'D'  => ['unweighted' => 1.00, 'weighted' => 2.00],
+            'D-' => ['unweighted' => 0.67, 'weighted' => 1.67],
+            'F'  => ['unweighted' => 0.00, 'weighted' => 0.00],
+            'I'  => ['unweighted' => 0.00, 'weighted' => 0.00],
+        ];
                 @endphp
 
-                @foreach(['9th', '10th', '11th', '12th'] as $index => $grade)
+                <!-- First Row: Grade 9 and Grade 10 -->
+                <div class="column">
                     @php
+                        $grade = '9th';
                         $records = $gradeData[$grade];
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
@@ -163,90 +174,314 @@ p {
                         
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
-                            $credit = $record->credit;
-                            
-                            $totalCreditsAttempted += $credit;
-                            
+            $credit = $record->credit;
+
+            $totalCreditsAttempted += $credit;
+
                             if (!in_array($gradeValue, ['F', 'I'])) {
-                                $totalCreditsAwarded += $credit;
-                            }
-                            
+                $totalCreditsAwarded += $credit;
+            }
+
                             if (isset($gradePoints[$gradeValue])) {
                                 $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
                                 $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
                             }
                         }
                         
-                        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-                        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        
-                        $year = 2021 + $index;
-                        $nextYear = $year + 1;
-                    @endphp
-                    
-                    <div class="column" style="padding-bottom: 8%;">
-                        <table style="width: 100%;">
-                            <tbody>
-                                <tr>
-                                    <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
-                                    <td colspan="2" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
-                                    <td colspan="2" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
-                                </tr>
-                                @forelse($records as $record)
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                    <td colspan="2" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="2" style="text-align: center;">{{ $record->grade }}</td>
-                                </tr>
-                                @empty
-                                @for($i = 0; $i < 8; $i++)
-                                <tr>
-                                    <td colspan="8" style="text-align: left;"></td>
-                                    <td colspan="2" style="text-align: center;"></td>
-                                    <td colspan="2" style="text-align: center;"></td>
-                                </tr>
-                                @endfor
-                                @endforelse
-                                
-                                <tr>
-                                    <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                    <td colspan="2" style="text-align: center; padding: 30px 10px;"></td>
-                                    <td colspan="2" style="text-align: center; padding: 30px 10px;"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
-                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
-                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="8" style="text-align: left;">Term Credits:</td>
-                                    <td colspan="4" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                @endforeach
-            </div>
-        </div>
+        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $year = 2021;
+                        $nextYear = 2022;
+		@endphp
+                    <table width="100%">
+                        <tbody>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <tr>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
+                            </tr>
+                            
+                            @forelse($records as $record)
+                            <tr>
+                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                            </tr>
+                            @empty
+                            @for($i = 0; $i < 8; $i++)
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            @endfor
+                            @endforelse
+                            
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term Credits:</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
+    </tr>
+</tbody>
+		</table>
+		</div>
+		
+                <div class="column">
+                    @php
+                        $grade = '10th';
+                        $records = $gradeData[$grade];
+        $totalCreditsAttempted = 0;
+        $totalCreditsAwarded = 0;
+        $totalUnweightedPoints = 0;
+        $totalWeightedPoints = 0;
 
-        <div class="pdffirstFooter">
-            <table style="width: 100%; padding-top: 30px;">
+                        foreach ($records as $record) {
+                            $gradeValue = $record->grade;
+            $credit = $record->credit;
+
+            $totalCreditsAttempted += $credit;
+
+                            if (!in_array($gradeValue, ['F', 'I'])) {
+                $totalCreditsAwarded += $credit;
+            }
+
+                            if (isset($gradePoints[$gradeValue])) {
+                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
+                            }
+                        }
+                        
+        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $year = 2022;
+                        $nextYear = 2023;
+  @endphp
+                    <table width="100%">
+                        <tbody>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <tr>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
+                            </tr>
+                            
+                            @forelse($records as $record)
+                            <tr>
+                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                            </tr>
+                            @empty
+                            @for($i = 0; $i < 8; $i++)
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            @endfor
+                            @endforelse
+                            
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
+    </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term Credits:</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
+			</tr>
+		</tbody>
+	</table>
+                </div>
+<div style="clear: both;"></div>
+                <!-- Second Row: Grade 11 and Grade 12 -->
+                <div class="columns" style=" width: 45%; float: left; ">
+                    @php
+                        $grade = '11th';
+                        $records = $gradeData[$grade];
+        $totalCreditsAttempted = 0;
+        $totalCreditsAwarded = 0;
+        $totalUnweightedPoints = 0;
+        $totalWeightedPoints = 0;
+
+                        foreach ($records as $record) {
+                            $gradeValue = $record->grade;
+            $credit = $record->credit;
+
+            $totalCreditsAttempted += $credit;
+
+                            if (!in_array($gradeValue, ['F', 'I'])) {
+                $totalCreditsAwarded += $credit;
+            }
+
+                            if (isset($gradePoints[$gradeValue])) {
+                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
+                            }
+                        }
+                        
+        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $year = 2023;
+                        $nextYear = 2024;
+    @endphp
+                    <table width="100%">
+                        <tbody>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <tr>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
+                            </tr>
+                            
+                            @forelse($records as $record)
+                            <tr>
+                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                            </tr>
+                            @empty
+                            @for($i = 0; $i < 8; $i++)
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            @endfor
+                            @endforelse
+                            
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term Credits:</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
+    </tr>
+</tbody>
+		</table>
+		</div>
+
+                <div class="columns" style="width: 45%; float: right;">
+                    @php
+                        $grade = '12th';
+                        $records = $gradeData[$grade];
+        $totalCreditsAttempted = 0;
+        $totalCreditsAwarded = 0;
+        $totalUnweightedPoints = 0;
+        $totalWeightedPoints = 0;
+
+                        foreach ($records as $record) {
+                            $gradeValue = $record->grade;
+            $credit = $record->credit;
+
+            $totalCreditsAttempted += $credit;
+
+                            if (!in_array($gradeValue, ['F', 'I'])) {
+                $totalCreditsAwarded += $credit;
+            }
+
+                            if (isset($gradePoints[$gradeValue])) {
+                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
+                            }
+                        }
+                        
+        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $year = 2024;
+                        $nextYear = 2025;
+    @endphp
+                    <table width="100%">
+                        <tbody>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <tr>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
+                            </tr>
+                            
+                            @forelse($records as $record)
+                            <tr>
+                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                            </tr>
+                            @empty
+                            @for($i = 0; $i < 8; $i++)
+                            <tr>
+                                <td colspan="8" style="text-align: left;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                                <td colspan="1" style="text-align: center;"></td>
+                            </tr>
+                            @endfor
+                            @endforelse
+                            
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align: left;">Term Credits:</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
+    </tr>
+</tbody>
+		</table>
+		</div>
+	</div>
+</div>
+
+        <div class="pdffirstFooter" style="clear: both;">
+            <table width="100%" style="padding-top: 30px;">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">OFFICIAL SCHOOL USE</td>
-                    </tr>
+                        <td colspan="12" style="text-align: center; font-size: 10px;  ">OFFICIAL SCHOOL USE</td>
+			</tr>
                 </tbody>
-            </table>
+	</table>
             <div class="tabletwo">
                 <div class="column" style="padding-right:5%; padding-bottom: 8%;">
-                    <table style="width: 100%;">
-                        <tbody>
+	<table width="100%">
+		<tbody>
                             @php
                                 // Calculate cumulative GPAs
                                 $cumulativeCreditsAttempted = 0;
@@ -276,19 +511,19 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (unweighted): </td>
                                 <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
-                            </tr>
-                            <tr>
+			</tr>
+			<tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted): </td>
                                 <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
-                            </tr>
-                            <tr>
+			</tr>
+			<tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Cum Credits: </td>
                                 <td colspan="2" style="text-align: right; font-size: 10px;">{{ $cumulativeCreditsAttempted }}</td>
-                            </tr>
-                            <tr>
+			</tr>
+			<tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Issue Date: </td>
                                 <td colspan="2" style="text-align: right; font-size: 10px;">{{ date('m/d/Y') }}</td>
-                            </tr>
+			</tr>
                         </tbody>
                     </table>
                 </div>
@@ -313,28 +548,28 @@ p {
             Email: contact@eliteprepacademy.org</p>
     </div>
     <div class="pdfsecondTable">
-        <table style="width: 100%; padding-top: 30px;">
+        <table width="100%" style="padding-top: 30px;">
             <tbody>
                 <tr>
                     <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grading System</td>
                     <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grade Points</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1"></td>
                     <td colspan="7" style="text-align: left;"></td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Grade</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Unweighted</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Weighted Honors</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Weighted AP</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;">A</td>
                     <td colspan="7" style="text-align: left;">-Excellent</td>
                     <td colspan="1" style="text-align: center;">A+</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
                     <td colspan="1" style="text-align: center;">4.83</td>
                     <td colspan="1" style="text-align: center;">5.33</td>
-                </tr>
+			</tr>
                 <tr>
                     <td colspan="1" style="width: 100px;">B</td>
                     <td colspan="7" style="text-align: left;">-Good</td>
@@ -342,7 +577,7 @@ p {
                     <td colspan="1" style="text-align: center;">4.00</td>
                     <td colspan="1" style="text-align: center;">4.50</td>
                     <td colspan="1" style="text-align: center;">5.00</td>
-                </tr>
+			</tr>
                 <tr>
                     <td colspan="1" style="width: 100px;">C</td>
                     <td colspan="7" style="text-align: left;">-Fair</td>
@@ -350,56 +585,56 @@ p {
                     <td colspan="1" style="text-align: center;">3.67</td>
                     <td colspan="1" style="text-align: center;">4.17</td>
                     <td colspan="1" style="text-align: center;">4.67</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;">D</td>
                     <td colspan="7" style="text-align: left;">-Barely Passed</td>
                     <td colspan="1" style="text-align: center;">B+</td>
                     <td colspan="1" style="text-align: center;">3.33</td>
                     <td colspan="1" style="text-align: center;">3.83</td>
                     <td colspan="1" style="text-align: center;">4.33</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;">F</td>
                     <td colspan="7" style="text-align: left;">-Failure</td>
                     <td colspan="1" style="text-align: center;">B</td>
                     <td colspan="1" style="text-align: center;">3.00</td>
                     <td colspan="1" style="text-align: center;">3.50</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;">I</td>
                     <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
                     <td colspan="1" style="text-align: center;">B-</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
                     <td colspan="1" style="text-align: center;">3.17</td>
                     <td colspan="1" style="text-align: center;">3.67</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;"></td>
                     <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
                     <td colspan="1" style="text-align: center;">C+</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.83</td>
                     <td colspan="1" style="text-align: center;">3.33</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="1" style="width: 100px;"></td>
                     <td colspan="7" style="text-align: left;"></td>
                     <td colspan="1" style="text-align: center;">C</td>
                     <td colspan="1" style="text-align: center;">2.00</td>
                     <td colspan="1" style="text-align: center;">2.50</td>
                     <td colspan="1" style="text-align: center;">3.00</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="7" style="text-align: center; font-weight: 600;">Credits Required for Graduation</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">C-</td>
                     <td colspan="1" style="text-align: center;">1.67</td>
                     <td colspan="1" style="text-align: center;">2.17</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">English</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -407,8 +642,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.33</td>
                     <td colspan="1" style="text-align: center;">1.83</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">History/Social Science </td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -416,8 +651,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.00</td>
                     <td colspan="1" style="text-align: center;">1.50</td>
                     <td colspan="1" style="text-align: center;">2.00</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">Math</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -425,8 +660,8 @@ p {
                     <td colspan="1" style="text-align: center;">0.67</td>
                     <td colspan="1" style="text-align: center;">1.17</td>
                     <td colspan="1" style="text-align: center;">1.67</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">Science</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -434,8 +669,8 @@ p {
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">Health/Physical Education</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -443,8 +678,8 @@ p {
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">Art</td>
                     <td colspan="3" style="text-align: center;">8</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -452,8 +687,8 @@ p {
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;"></td>
-                </tr>
-                <tr>
+			</tr>
+			<tr>
                     <td colspan="4" style="text-align: left;">Electives</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
@@ -461,12 +696,12 @@ p {
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;"></td>
-                </tr>
+			</tr>
 
-            </tbody>
-        </table>
+		</tbody>
+	</table>
         <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
-    </div>
+	</div>
 </div>
 </body>
 </html>
