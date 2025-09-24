@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     font-size: 10px;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
@@ -31,13 +31,13 @@
 .pdfHead .headImg {
     float: left;
     margin-right: 4%;
-    width: 12%;
+    width: 20%;
 }
 .pdfHead .headImg img {
-    width: 120px;
+    width: 100px;
 }
 .headTxt {
-    width: 84%;
+    width: 76%;
     float: right;
 }
 .headTxt h2 {
@@ -107,7 +107,7 @@ p {
             </table>
         </div>
 
-        <div class="pdfmain" style="border: 2px solid #000; padding: 20px 60px; display: flow-root;">
+        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table; width: 96.5%;">
             <table width="100%">
                 <tbody>
                     <tr>
