@@ -188,7 +188,9 @@ p {
                     <div class="column" style="float: left; width: 45%; padding-bottom: 8%;">
                         <table width="100%">
                             <tbody>
-                                <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                                <tr>
+                                    <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                                </tr>
                                 <tr>
                                     <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                     <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
