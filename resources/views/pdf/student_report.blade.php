@@ -57,10 +57,10 @@ p {
 .tabletwo {
 	clear: both;
 }
-.column {
+/* .column {
     float: left;
     width: 45%; 
-}
+} */
 .mainTableSecond p {
     font-size: 10px;
     line-height: 1.5;
@@ -116,7 +116,7 @@ p {
             </table>
         </div>
 
-        <div class="pdfmain" style="border: 2px solid #000; padding: 20px; display: table; width: 100%">
+        <div class="pdfmain" style="padding: 10px; display: grid;">
             <table width="100%">
                 <tbody>
                     <tr>
@@ -185,7 +185,7 @@ p {
                         $nextYear = $year + 1;
                     @endphp
                     
-                    <div class="column" style="float: left; width: 45%; padding-bottom: 8%;">
+                    <div class="column" style="padding-bottom: 8%;">
                         <table width="100%">
                             <tbody>
                                 <tr>
