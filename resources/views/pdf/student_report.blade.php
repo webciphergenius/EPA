@@ -9,7 +9,7 @@
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 1.4;
 }
 .mainTableFirst {
@@ -43,11 +43,11 @@
 .headTxt h2 {
     letter-spacing: 1px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 12px;
 }
 p {
-    font-size: 13px;
+    font-size: 10px;
     line-height: 1.4;
 }
 .pdfsubhead {
@@ -62,8 +62,11 @@ p {
     width: 45%; 
 }
 .mainTableSecond p {
-    font-size: 13px;
+    font-size: 10px;
     line-height: 1.5;
+}
+.secondHead {
+    color: #295293;
 }
 </style>
 </head>
@@ -108,7 +111,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 14px; padding-bottom: 10px;">ACADEMIC RECORD</td>
+                        <td colspan="2" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
@@ -176,11 +179,11 @@ p {
                     <div class="column" style="padding-{{ $index % 2 == 0 ? 'right' : 'left' }}:5%; padding-bottom: 8%;">
                         <table width="100%">
                             <tbody>
-                                <td colspan="12" style="text-align: center; font-size: 14px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                                <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
                                 <tr>
-                                    <td colspan="8" style="text-align: left; font-size: 13px; text-decoration: underline;">Course</td>
-                                    <td colspan="1" style="text-align: center; font-size: 13px; text-decoration: underline;">Credits</td>
-                                    <td colspan="1" style="text-align: center; font-size: 13px; text-decoration: underline;">Grade</td>
+                                    <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                    <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                                 </tr>
                                 
                                 @forelse($records as $record)
@@ -227,7 +230,7 @@ p {
             <table width="100%" style="padding-top: 30px;">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 14px; padding-bottom: 10px;">OFFICIAL SCHOOL USE</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">OFFICIAL SCHOOL USE</td>
                     </tr>
                 </tbody>
             </table>
@@ -262,38 +265,38 @@ p {
                                 $cumulativeWeightedGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeWeightedPoints / $cumulativeCreditsAttempted : 0;
                             @endphp
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 13px;">Cum GPA (unweighted): </td>
-                                <td colspan="2" style="text-align: right; font-size: 13px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (unweighted): </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 13px;">Cum GPA (weighted): </td>
-                                <td colspan="2" style="text-align: right; font-size: 13px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted): </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 13px;">Cum Credits: </td>
-                                <td colspan="2" style="text-align: right; font-size: 13px;">{{ $cumulativeCreditsAttempted }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum Credits: </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ $cumulativeCreditsAttempted }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 13px;">Issue Date: </td>
-                                <td colspan="2" style="text-align: right; font-size: 13px;">{{ date('m/d/Y') }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Issue Date: </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ date('m/d/Y') }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 300px;">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 150px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000;">Registrar</p>
                     </div>
                 </div>
             </div>
-            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 13px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
         </div>
     </div>
 </div>
 <div class="mainTableSecond">
     <div class="secondHead">
-        <h3 style="text-align: center; color: #295293; font-size: 24px; padding-bottom: 20px;">TRANSCRIPT KEY</h3>
+        <h3 style="text-align: center; font-size: 20px; padding-bottom: 20px;">TRANSCRIPT KEY</h3>
         <p>Office of the Registrar <br>
             452 Lakeside Blvd <br>
             Hopatcong, NJ 07843 <br>
@@ -304,8 +307,8 @@ p {
         <table width="100%" style="padding-top: 30px;">
             <tbody>
                 <tr>
-                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 14px;">Grading System</td>
-                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 14px;">Grade Points</td>
+                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grading System</td>
+                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grade Points</td>
                 </tr>
                 <tr>
                     <td colspan="1"></td>
@@ -453,7 +456,7 @@ p {
 
             </tbody>
         </table>
-        <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 13px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+        <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
     </div>
 </div>
 </body>
