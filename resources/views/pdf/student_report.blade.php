@@ -68,9 +68,9 @@ p {
     width: 45%;
 }
 .mainCol {
-    height: 720px;
+    /* height: 720px;
     min-height: 720px;
-    max-height: 720px;
+    max-height: 720px; */
     border: 2px solid #000000;
     clear: both;
 }
@@ -548,7 +548,7 @@ p {
              Phone: (732)397-7988 <br>
             Email: contact@eliteprepacademy.org</p>
     </div>
-    <div class="pdfsecondTable" style="padding-left: 12%;">
+    <div class="pdfsecondTable" style="padding-left: 8%;">
         <table width="100%" text-align: left; padding: 10px;>
             <tbody>
                 <tr>
@@ -718,8 +718,8 @@ p {
 
 		</tbody>
 	</table>
-        <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
 	</div>
+    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
 </div>
 </body>
 </html>
