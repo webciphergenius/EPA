@@ -68,9 +68,9 @@ p {
     width: 45%;
 }
 .mainCol .column {
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
 }
 .mainTableSecond p {
     font-size: 10px;
