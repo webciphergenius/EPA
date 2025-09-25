@@ -71,6 +71,8 @@ p {
     height: 720px;
     min-height: 720px;
     max-height: 720px;
+    border: 2px solid #000000;
+    clear: both;
 }
 .mainCol .column {
     height: 325px;
@@ -102,7 +104,7 @@ p {
 	</div>
 
         <div class="pdfsubhead">
-            <table width="100%" style="border-top: 2px solid #000; padding: 20px 0;">
+            <table width="100%" style="border-top: 2px solid #000000; padding: 20px 0;">
                 <tbody>
                     <tr>
                         <td>Name: {{ $student->name }}</td>
@@ -529,7 +531,7 @@ p {
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
                         <img src="{{ public_path('script-sign.png') }}" style="width: 150px;">
-                        <p class="signaturetxt" style="border-top: 2px solid #000;">Registrar</p>
+                        <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
             </div>
@@ -546,7 +548,7 @@ p {
              Phone: (732)397-7988 <br>
             Email: contact@eliteprepacademy.org</p>
     </div>
-    <div class="pdfsecondTable">
+    <div class="pdfsecondTable" style="padding-left: 12%;">
         <table width="100%" text-align: left; padding: 10px;>
             <tbody>
                 <tr>
@@ -554,114 +556,149 @@ p {
                     <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grade Points</td>
 			</tr>
 			<tr>
-                    <td colspan="1"></td>
-                    <td colspan="7" style="text-align: left;"></td>
+                    <td colspan="1" style="width: 100px;">A</td>
+                    <td colspan="7" style="text-align: left;">-Excellent</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Grade</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Unweighted</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Weighted Honors</td>
                     <td colspan="1" style="text-align: center; text-decoration: underline;">Weighted AP</td>
 			</tr>
 			<tr>
-                    <td colspan="1" style="width: 100px;">A</td>
-                    <td colspan="7" style="text-align: left;">-Excellent</td>
+                    <td colspan="1" style="width: 100px;">B</td>
+                    <td colspan="7" style="text-align: left;">-Good</td>
                     <td colspan="1" style="text-align: center;">A+</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
                     <td colspan="1" style="text-align: center;">4.83</td>
                     <td colspan="1" style="text-align: center;">5.33</td>
 			</tr>
                 <tr>
-                    <td colspan="1" style="width: 100px;">B</td>
-                    <td colspan="7" style="text-align: left;">-Good</td>
+                    <<td colspan="1" style="width: 100px;">C</td>
+                    <td colspan="7" style="text-align: left;">-Fair</td>
                     <td colspan="1" style="text-align: center;">A</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
                     <td colspan="1" style="text-align: center;">4.50</td>
                     <td colspan="1" style="text-align: center;">5.00</td>
 			</tr>
                 <tr>
-                    <td colspan="1" style="width: 100px;">C</td>
-                    <td colspan="7" style="text-align: left;">-Fair</td>
+                    <td colspan="1" style="width: 100px;">D</td>
+                    <td colspan="7" style="text-align: left;">-Barely Passed</td>
                     <td colspan="1" style="text-align: center;">A-</td>
                     <td colspan="1" style="text-align: center;">3.67</td>
                     <td colspan="1" style="text-align: center;">4.17</td>
                     <td colspan="1" style="text-align: center;">4.67</td>
 			</tr>
 			<tr>
-                    <td colspan="1" style="width: 100px;">D</td>
-                    <td colspan="7" style="text-align: left;">-Barely Passed</td>
+                    <td colspan="1" style="width: 100px;">F</td>
+                    <td colspan="7" style="text-align: left;">-Failure</td>
                     <td colspan="1" style="text-align: center;">B+</td>
                     <td colspan="1" style="text-align: center;">3.33</td>
                     <td colspan="1" style="text-align: center;">3.83</td>
                     <td colspan="1" style="text-align: center;">4.33</td>
 			</tr>
 			<tr>
-                    <td colspan="1" style="width: 100px;">F</td>
-                    <td colspan="7" style="text-align: left;">-Failure</td>
+                    <td colspan="1" style="width: 100px;">I</td>
+                    <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
+                    <td colspan="1" style="text-align: center;">A+</td>
+                    <td colspan="1" style="text-align: center;">4.00</td>
+                    <td colspan="1" style="text-align: center;">4.83</td>
+                    <td colspan="1" style="text-align: center;">5.33</td>
+			</tr>
+			<tr>
+                    <td colspan="1" style="width: 100px;"></td>
+                    <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
+                    <td colspan="1" style="text-align: center;">A</td>
+                    <td colspan="1" style="text-align: center;">4.00</td>
+                    <td colspan="1" style="text-align: center;">4.50</td>
+                    <td colspan="1" style="text-align: center;">5.00</td>
+			</tr>
+			<tr>
+                    <td colspan="1" style="width: 100px;"></td>
+                    <td colspan="7" style="text-align: left;"></td>
+                    <td colspan="1" style="text-align: center;">A-</td>
+                    <td colspan="1" style="text-align: center;">3.67</td>
+                    <td colspan="1" style="text-align: center;">4.17</td>
+                    <td colspan="1" style="text-align: center;">4.67</td>
+			</tr>
+			<tr>
+                    <td colspan="8" style="text-align: left;">The grades A, B, C, and D may be modified by plus (+) or minus (-) suffixes.</td>
+                    <td colspan="1" style="text-align: center;">B+</td>
+                    <td colspan="1" style="text-align: center;">3.33</td>
+                    <td colspan="1" style="text-align: center;">3.83</td>
+                    <td colspan="1" style="text-align: center;">3.00</td>
+			</tr>
+			<tr>
+                    <td colspan="7" style="text-align: center; font-weight: 600;">Credits Required for Graduation</td>
+                    <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">B</td>
                     <td colspan="1" style="text-align: center;">3.00</td>
                     <td colspan="1" style="text-align: center;">3.50</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
 			</tr>
 			<tr>
-                    <td colspan="1" style="width: 100px;">I</td>
-                    <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
+                    <td colspan="4" style="text-align: left;">English</td>
+                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">B-</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
                     <td colspan="1" style="text-align: center;">3.17</td>
                     <td colspan="1" style="text-align: center;">3.67</td>
 			</tr>
 			<tr>
-                    <td colspan="1" style="width: 100px;"></td>
-                    <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
+                    <td colspan="4" style="text-align: left;">Social Science</td>
+                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">C+</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
-                    <td colspan="1" style="text-align: center;">2.83</td>
-                    <td colspan="1" style="text-align: center;">3.33</td>
-			</tr>
-			<tr>
-                    <td colspan="1" style="width: 100px;"></td>
-                    <td colspan="7" style="text-align: left;"></td>
-                    <td colspan="1" style="text-align: center;">C</td>
-                    <td colspan="1" style="text-align: center;">2.00</td>
-                    <td colspan="1" style="text-align: center;">2.50</td>
-                    <td colspan="1" style="text-align: center;">3.00</td>
-			</tr>
-			<tr>
-                    <td colspan="7" style="text-align: center; font-weight: 600;">Credits Required for Graduation</td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;">C-</td>
-                    <td colspan="1" style="text-align: center;">1.67</td>
-                    <td colspan="1" style="text-align: center;">2.17</td>
-                    <td colspan="1" style="text-align: center;">2.67</td>
-			</tr>
-			<tr>
-                    <td colspan="4" style="text-align: left;">English</td>
-                    <td colspan="3" style="text-align: center;">16</td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;">D+</td>
-                    <td colspan="1" style="text-align: center;">1.33</td>
-                    <td colspan="1" style="text-align: center;">1.83</td>
+                    <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">History/Social Science </td>
-                    <td colspan="3" style="text-align: center;">16</td>
+                    <td colspan="4" style="text-align: left;">Mathematics</td>
+                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;">D</td>
-                    <td colspan="1" style="text-align: center;">1.00</td>
-                    <td colspan="1" style="text-align: center;">1.50</td>
+                    <td colspan="1" style="text-align: center;">C</td>
                     <td colspan="1" style="text-align: center;">2.00</td>
-			</tr>
-			<tr>
-                    <td colspan="4" style="text-align: left;">Math</td>
-                    <td colspan="3" style="text-align: center;">16</td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;">D-</td>
-                    <td colspan="1" style="text-align: center;">0.67</td>
-                    <td colspan="1" style="text-align: center;">1.17</td>
-                    <td colspan="1" style="text-align: center;">1.67</td>
+                    <td colspan="1" style="text-align: center;">2.00</td>
+                    <td colspan="1" style="text-align: center;">2.00</td>
 			</tr>
 			<tr>
                     <td colspan="4" style="text-align: left;">Science</td>
+                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="text-align: center;">C-</td>
+                    <td colspan="1" style="text-align: center;">1.67</td>
+                    <td colspan="1" style="text-align: center;">1.67</td>
+                    <td colspan="1" style="text-align: center;">1.67</td>
+			</tr>
+			<tr>
+                    <td colspan="4" style="text-align: left;">Health/Physical Education</td>
+                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="text-align: center;">D+</td>
+                    <td colspan="1" style="text-align: center;">1.33</td>
+                    <td colspan="1" style="text-align: center;">1.33</td>
+                    <td colspan="1" style="text-align: center;">1.33</td>
+			</tr>
+			<tr>
+                    <td colspan="4" style="text-align: left;">Second Language</td>
+                    <td colspan="3" style="text-align: center;">12 (3 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="text-align: center;">D</td>
+                    <td colspan="1" style="text-align: center;">1.00</td>
+                    <td colspan="1" style="text-align: center;">1.00</td>
+                    <td colspan="1" style="text-align: center;">1.00</td>
+			</tr>
+			<tr>
+                    <td colspan="4" style="text-align: left;">Art</td>
+                    <td colspan="3" style="text-align: center;">12 (3 years)</td>
+                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="text-align: center;">D-</td>
+                    <td colspan="1" style="text-align: center;">0.67</td>
+                    <td colspan="1" style="text-align: center;">0.67</td>
+                    <td colspan="1" style="text-align: center;">0.67</td>
+			</tr>
+            <tr>
+                    <td colspan="4" style="text-align: left;">Electives</td>
                     <td colspan="3" style="text-align: center;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">F</td>
@@ -669,32 +706,14 @@ p {
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
 			</tr>
-			<tr>
-                    <td colspan="4" style="text-align: left;">Health/Physical Education</td>
-                    <td colspan="3" style="text-align: center;">16</td>
+            <tr>
+                    <td colspan="4" style="text-align: left;">Research Project</td>
+                    <td colspan="3" style="text-align: center;">6</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">I</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
-			</tr>
-			<tr>
-                    <td colspan="4" style="text-align: left;">Art</td>
-                    <td colspan="3" style="text-align: center;">8</td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-			</tr>
-			<tr>
-                    <td colspan="4" style="text-align: left;">Electives</td>
-                    <td colspan="3" style="text-align: center;">16</td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;"></td>
 			</tr>
 
 		</tbody>
