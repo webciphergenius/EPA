@@ -72,9 +72,9 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 500px;
-    min-height: 500px;
-    max-height: 500px; 
+    height: 550px;
+    min-height: 550px;
+    max-height: 550px; 
     clear: both;
     padding: 20px;
 }
@@ -484,7 +484,7 @@ p {
                 </tbody>
 	</table>
             <div class="tabletwo">
-                <div class="column" style="padding-right:5%; padding-bottom: 8%;">
+                <div class="column" style="padding-right:5%; padding-bottom: 30px;">
 	<table width="100%">
 		<tbody>
                             @php
