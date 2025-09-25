@@ -72,10 +72,11 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 720px;
-    min-height: 720px;
-    max-height: 720px; 
-    clear: both; 
+    height: 600px;
+    min-height: 600px;
+    max-height: 600px; 
+    clear: both;
+    padding: 20px;
 }
 .mainCol .column {
     height: 325px;
