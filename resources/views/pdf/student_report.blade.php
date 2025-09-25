@@ -68,7 +68,9 @@ p {
     width: 45%;
 }
 .mainCol .column {
-    height: 260px;
+    height: 280px;
+    min-height: 280px;
+    max-height: 280px;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -77,8 +79,7 @@ p {
 .secondHead {
     color: #295293;
 }
-
-    </style> 
+</style> 
 </head>
 <body>
 <div class="mainTableFirst">
