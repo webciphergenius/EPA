@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transcript</title>
-    <style>
-	* {
+<style>
+* {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 		font-size: 10px;
     line-height: 1.2;
 }
-
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
@@ -64,19 +63,14 @@ p {
 .tabletwo {
 	clear: both;
 }
-.pdfmain {
-   
-    
-}
 .column {
    float: left;
     width: 45%;
-    
+  
 }
-
-
-
-
+.tabletwo .column {
+    height: 430px;
+}
 .mainTableSecond p {
     font-size: 10px;
     line-height: 1.5;
@@ -219,9 +213,9 @@ p {
                             @endforelse
                             
                             <tr>
-                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="8" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
@@ -295,9 +289,9 @@ p {
                             @endforelse
                             
                             <tr>
-                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="8" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
@@ -372,9 +366,9 @@ p {
                             @endforelse
                             
                             <tr>
-                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="8" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
@@ -448,9 +442,9 @@ p {
                             @endforelse
                             
                             <tr>
-                                <td colspan="8" style="text-align: left; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
-                                <td colspan="1" style="text-align: center; padding: 30px 10px;"></td>
+                                <td colspan="8" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 10px;"></td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
@@ -471,7 +465,7 @@ p {
 </div>
 
         <div class="pdffirstFooter" style="clear: both;">
-            <table width="100%" style="padding-top: 30px;">
+            <table width="100%" style="padding-top: 10px;">
                 <tbody>
                     <tr>
                         <td colspan="12" style="text-align: center; font-size: 10px;  ">OFFICIAL SCHOOL USE</td>
@@ -548,7 +542,7 @@ p {
             Email: contact@eliteprepacademy.org</p>
     </div>
     <div class="pdfsecondTable">
-        <table width="100%" style="padding-top: 30px;">
+        <table width="100%" text-align: left; padding: 10px;>
             <tbody>
                 <tr>
                     <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grading System</td>
