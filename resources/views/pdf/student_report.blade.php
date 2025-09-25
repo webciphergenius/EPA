@@ -67,10 +67,15 @@ p {
    float: left;
     width: 45%;
 }
+.mainCol {
+    height: 720px;
+    min-height: 720px;
+    max-height: 720px;
+}
 .mainCol .column {
-    height: 320px;
-    min-height: 320px;
-    max-height: 320px;
+    height: 325px;
+    min-height: 325px;
+    max-height: 325px;
 }
 .mainTableSecond p {
     font-size: 10px;
