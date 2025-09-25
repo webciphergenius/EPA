@@ -133,7 +133,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 10px; padding: 12px 0 0;">ACADEMIC RECORD</td>
+                        <td colspan="2" style="text-align: center; font-size: 10px; padding: 13px 0 0;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
