@@ -68,9 +68,9 @@ p {
     width: 45%;
 }
 .mainCol .column {
-    height: 280px;
-    min-height: 280px;
-    max-height: 280px;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -465,7 +465,7 @@ p {
 </div>
 
         <div class="pdffirstFooter" style="clear: both;">
-            <table width="100%" style="padding-top: 10px;">
+            <table width="100%" style="padding-top: 20px;">
                 <tbody>
                     <tr>
                         <td colspan="12" style="text-align: center; font-size: 10px;  ">OFFICIAL SCHOOL USE</td>
