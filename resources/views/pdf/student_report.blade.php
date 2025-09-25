@@ -68,7 +68,7 @@ p {
     width: 45%;
 }
 .tabletwo .column {
-    height: 300px;
+    height: 260px;
 }
 .mainTableSecond p {
     font-size: 10px;
