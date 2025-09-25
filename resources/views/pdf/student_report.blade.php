@@ -66,10 +66,9 @@ p {
 .column {
    float: left;
     width: 45%;
-  
 }
 .tabletwo .column {
-    height: 430px;
+    height: 300px;
 }
 .mainTableSecond p {
     font-size: 10px;
