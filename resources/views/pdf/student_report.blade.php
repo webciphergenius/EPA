@@ -67,12 +67,15 @@ p {
    float: left;
     width: 45%;
 }
-.mainCol {
-    /* height: 720px;
-    min-height: 720px;
-    max-height: 720px; */
+.pdfmain {
     border: 2px solid #000000;
     clear: both;
+}
+.mainCol {
+    height: 720px;
+    min-height: 720px;
+    max-height: 720px; 
+    clear: both; 
 }
 .mainCol .column {
     height: 325px;
@@ -127,12 +130,12 @@ p {
 
         <div class="pdfmain" >
             <table width="100%">
-		<tbody>
-			<tr>
+                <tbody>
+                    <tr>
                         <td colspan="2" style="text-align: center; font-size: 10px; padding-bottom: 10px;">ACADEMIC RECORD</td>
-			</tr>
-		</tbody>
-	</table>
+                    </tr>
+                </tbody>
+            </table>
 	
             <div class="tabletwo mainCol">
                 @php
