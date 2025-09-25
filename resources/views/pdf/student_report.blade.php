@@ -15,7 +15,7 @@
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
-    padding: 90px 70px 30px;
+    padding: 70px 70px 10px;
 }
 .column:nth-child(2), .columns:nth-child(2) {
     padding-left: 5%;
@@ -58,7 +58,7 @@ p {
 }
 .pdfsubhead {
     clear: both;
-    padding-top: 25px;
+    padding-top: 10px;
 	}
 .tabletwo {
 	clear: both;
@@ -108,7 +108,7 @@ p {
 	</div>
 
         <div class="pdfsubhead">
-            <table width="100%" style="border-top: 2px solid #000000; padding: 20px 0;">
+            <table width="100%" style="border-top: 2px solid #000000; padding: 10px 0;">
                 <tbody>
                     <tr>
                         <td>Name: {{ $student->name }}</td>
@@ -476,7 +476,7 @@ p {
 </div>
 
         <div class="pdffirstFooter" style="clear: both;">
-            <table width="100%" style="padding-top: 20px;">
+            <table width="100%">
                 <tbody>
                     <tr>
                         <td colspan="12" style="text-align: center; font-size: 10px;  ">OFFICIAL SCHOOL USE</td>
@@ -534,7 +534,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 150px;">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 120px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
@@ -552,7 +552,7 @@ p {
              Phone: (732)397-7988 <br>
             Email: contact@eliteprepacademy.org</p>
     </div>
-    <div class="pdfsecondTable" style="padding-left: 8%;">
+    <div class="pdfsecondTable" style="padding: 2% 0 0 8%;">
         <table width="100%" text-align: left; padding: 10px;>
             <tbody>
                 <tr>
