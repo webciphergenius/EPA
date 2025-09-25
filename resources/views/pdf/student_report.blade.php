@@ -67,7 +67,7 @@ p {
    float: left;
     width: 45%;
 }
-.tabletwo .column {
+.mainCol .column {
     height: 260px;
 }
 .mainTableSecond p {
@@ -126,7 +126,7 @@ p {
 		</tbody>
 	</table>
 	
-            <div class="tabletwo">
+            <div class="tabletwo mainCol">
                 @php
                     // Group academic records by grade level
                     $gradeLevels = ['9th', '10th', '11th', '12th'];
