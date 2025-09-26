@@ -15,7 +15,7 @@
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
-    padding: 70px 70px 30px;
+    padding: 40px 70px 30px;
 }
 .column:nth-child(2), .columns:nth-child(2) {
     padding-left: 5%;
