@@ -475,7 +475,7 @@ p {
 	</div>
 </div>
 
-        <div class="pdffirstFooter" style="clear: both; padding: 20px 0 0 ">
+        <div class="pdffirstFooter" style="clear: both; padding: 0 ">
             <table width="100%">
                 <tbody>
                     <tr>
@@ -484,7 +484,7 @@ p {
                 </tbody>
 	</table>
             <div class="tabletwo">
-                <div class="column" style="padding-right:5%; padding-bottom: 30px;">
+                <div class="column" style="padding-right:5%; padding-bottom: 10px;">
 	<table width="100%">
 		<tbody>
                             @php
@@ -534,7 +534,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 200px;     transform: translateY(-60px);">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 200px;0px);">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
