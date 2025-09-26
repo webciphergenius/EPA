@@ -72,9 +72,9 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 570px;
-    min-height: 570px;
-    max-height: 570px; 
+    height: 560px;
+    min-height: 560px;
+    max-height: 560px; 
     clear: both;
     padding: 30px 20px;
 }
@@ -534,7 +534,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 200px;0px);">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 200px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
