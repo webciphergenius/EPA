@@ -72,9 +72,9 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 560px;
-    min-height: 560px;
-    max-height: 560px; 
+    height: 550px;
+    min-height: 550px;
+    max-height: 550px; 
     clear: both;
     padding: 30px 20px;
 }
@@ -475,7 +475,7 @@ p {
 	</div>
 </div>
 
-        <div class="pdffirstFooter" style="clear: both; padding: 0 ">
+        <div class="pdffirstFooter" style="clear: both; padding: 10px 0 0 ">
             <table width="100%">
                 <tbody>
                     <tr>
@@ -534,7 +534,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 200px;">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 180px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
