@@ -539,7 +539,7 @@ p {
                     </div>
                 </div>
             </div>
-            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
         </div>
     </div>
 </div>
@@ -723,7 +723,7 @@ p {
 		</tbody>
 	</table>
 	</div>
-    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2023, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
 </div>
 </body>
 </html>
