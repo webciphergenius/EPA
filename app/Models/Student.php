@@ -11,9 +11,9 @@ class Student extends Model
         'name',
         'dob',
         'email',
+        'gender',
         'graduation_date',
-        'mother_name',
-        'father_name',
+        'guardian_name',
         'address',
         'phone_number',
     ];

@@ -13,6 +13,7 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -38,14 +39,19 @@ class StudentResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Select::make('gender')
+                    ->label('Gender')
+                    ->options([
+                        'Male' => 'Male',
+                        'Female' => 'Female',
+                        'Other' => 'Other',
+                    ])
+                    ->nullable(),
                 DatePicker::make('graduation_date')
                     ->label('Graduation Date')
                     ->nullable(),
-                TextInput::make('mother_name')
-                    ->label("Mother's Name")
-                    ->maxLength(255),
-                TextInput::make('father_name')
-                    ->label("Father's Name")
+                TextInput::make('guardian_name')
+                    ->label('Guardian Name')
                     ->maxLength(255),
                 TextInput::make('address')
                     ->label('Address')
@@ -95,9 +101,9 @@ public static function previewStudentPdf($record)
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('dob')->label('Date of Birth')->date(),
                 TextColumn::make('email')->sortable()->searchable(),
+                TextColumn::make('gender')->label('Gender'),
                 TextColumn::make('graduation_date')->label('Graduation Date')->date(),
-                TextColumn::make('mother_name')->label("Mother's Name"),
-                TextColumn::make('father_name')->label("Father's Name"),
+                TextColumn::make('guardian_name')->label('Guardian Name'),
                 TextColumn::make('address')->label('Address'),
                 TextColumn::make('phone_number')->label('Phone Number'),
                 
