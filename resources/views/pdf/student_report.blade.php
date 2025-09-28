@@ -112,7 +112,7 @@ p {
                 <tbody>
                     <tr>
                         <td>Name: {{ $student->name }}</td>
-                        <td>Date of Birth: {{ $student->dob }}</td>
+                        <td>Date of Birth: {{ $student->dob->format('m/d/Y') }}</td>
                         <td>Guardian: {{ $student->father_name ?? 'N/A' }}</td>
 			</tr>
 			<tr>
@@ -122,7 +122,7 @@ p {
 			</tr>
                     <tr>
                         <td></td>
-                        <td>Date of Graduation: {{ $student->graduation_date ?? 'N/A' }}</td>
+                        <td>Date of Graduation: {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
                         <td></td>
 			</tr>
 		</tbody>
