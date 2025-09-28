@@ -15,7 +15,7 @@
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
-    padding: 40px 70px 30px;
+    padding: 30px 70px 20px;
 }
 .column:nth-child(2), .columns:nth-child(2) {
     padding-left: 5%;
@@ -534,7 +534,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 220px;">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 240px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
