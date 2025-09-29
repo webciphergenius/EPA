@@ -640,7 +640,7 @@ p {
 			</tr>
 			<tr>
                     <td colspan="4" style="text-align: left;">English</td>
-                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="3" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">B-</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
