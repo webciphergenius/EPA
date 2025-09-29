@@ -639,8 +639,8 @@ p {
                     <td colspan="1" style="text-align: center;">4.00</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">English</td>
-                    <td colspan="3" style="text-align: left;">16 (4 years)</td>
+                    <td colspan="5" style="text-align: left;">English</td>
+                    <td colspan="2" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">B-</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
@@ -648,8 +648,8 @@ p {
                     <td colspan="1" style="text-align: center;">3.67</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Social Science</td>
-                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="5" style="text-align: left;">Social Science</td>
+                    <td colspan="2" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">C+</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
@@ -657,8 +657,8 @@ p {
                     <td colspan="1" style="text-align: center;">2.33</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Mathematics</td>
-                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="5" style="text-align: left;">Mathematics</td>
+                    <td colspan="2" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">C</td>
                     <td colspan="1" style="text-align: center;">2.00</td>
@@ -666,8 +666,8 @@ p {
                     <td colspan="1" style="text-align: center;">2.00</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Science</td>
-                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="5" style="text-align: left;">Science</td>
+                    <td colspan="2" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">C-</td>
                     <td colspan="1" style="text-align: center;">1.67</td>
@@ -675,8 +675,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.67</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Health/Physical Education</td>
-                    <td colspan="3" style="text-align: center;">16 (4 years)</td>
+                    <td colspan="5" style="text-align: left;">Health/Physical Education</td>
+                    <td colspan="2" style="text-align: left;">16 (4 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">D+</td>
                     <td colspan="1" style="text-align: center;">1.33</td>
@@ -684,8 +684,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.33</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Second Language</td>
-                    <td colspan="3" style="text-align: center;">12 (3 years)</td>
+                    <td colspan="5" style="text-align: left;">Second Language</td>
+                    <td colspan="2" style="text-align: left;">12 (3 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">D</td>
                     <td colspan="1" style="text-align: center;">1.00</td>
@@ -693,8 +693,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.00</td>
 			</tr>
 			<tr>
-                    <td colspan="4" style="text-align: left;">Art</td>
-                    <td colspan="3" style="text-align: center;">12 (3 years)</td>
+                    <td colspan="5" style="text-align: left;">Art</td>
+                    <td colspan="2" style="text-align: left;">12 (3 years)</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">D-</td>
                     <td colspan="1" style="text-align: center;">0.67</td>
@@ -702,8 +702,8 @@ p {
                     <td colspan="1" style="text-align: center;">0.67</td>
 			</tr>
             <tr>
-                    <td colspan="4" style="text-align: left;">Electives</td>
-                    <td colspan="3" style="text-align: center;">16</td>
+                    <td colspan="5" style="text-align: left;">Electives</td>
+                    <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">F</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
@@ -711,8 +711,8 @@ p {
                     <td colspan="1" style="text-align: center;">0.00</td>
 			</tr>
             <tr>
-                    <td colspan="4" style="text-align: left;">Research Project</td>
-                    <td colspan="3" style="text-align: center;">6</td>
+                    <td colspan="5" style="text-align: left;">Research Project</td>
+                    <td colspan="2" style="text-align: left;">6</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">I</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
