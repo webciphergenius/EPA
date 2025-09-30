@@ -193,14 +193,16 @@ p {
                             }
                         }
                         
-        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
         $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        $year = 2021;
-                        $nextYear = 2022;
+                        
+                        // Get the school year from the first record of this grade level
+                        $firstRecord = $records->first();
+                        $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
 		@endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -271,12 +273,14 @@ p {
                         
         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
         $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        $year = 2022;
-                        $nextYear = 2023;
+                        
+                        // Get the school year from the first record of this grade level
+                        $firstRecord = $records->first();
+                        $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
   @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -348,12 +352,14 @@ p {
                         
         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
         $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        $year = 2023;
-                        $nextYear = 2024;
+                        
+                        // Get the school year from the first record of this grade level
+                        $firstRecord = $records->first();
+                        $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -424,12 +430,14 @@ p {
                         
         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
         $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        $year = 2024;
-                        $nextYear = 2025;
+                        
+                        // Get the school year from the first record of this grade level
+                        $firstRecord = $records->first();
+                        $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $year }}-{{ $nextYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
