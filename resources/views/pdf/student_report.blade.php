@@ -150,20 +150,20 @@ p {
                     
                     // Define grade points for calculations
         $gradePoints = [
-            'A+' => ['unweighted' => 4.00, 'weighted' => 5.33],
-            'A'  => ['unweighted' => 4.00, 'weighted' => 5.00],
-            'A-' => ['unweighted' => 3.67, 'weighted' => 4.67],
-            'B+' => ['unweighted' => 3.33, 'weighted' => 4.33],
-            'B'  => ['unweighted' => 3.00, 'weighted' => 4.00],
-            'B-' => ['unweighted' => 2.67, 'weighted' => 3.67],
-            'C+' => ['unweighted' => 2.33, 'weighted' => 3.33],
-            'C'  => ['unweighted' => 2.00, 'weighted' => 3.00],
-            'C-' => ['unweighted' => 1.67, 'weighted' => 2.67],
-            'D+' => ['unweighted' => 1.33, 'weighted' => 2.33],
-            'D'  => ['unweighted' => 1.00, 'weighted' => 2.00],
-            'D-' => ['unweighted' => 0.67, 'weighted' => 1.67],
-            'F'  => ['unweighted' => 0.00, 'weighted' => 0.00],
-            'I'  => ['unweighted' => 0.00, 'weighted' => 0.00],
+            'A+' => ['unweighted' => 4.00, 'weighted_honors' => 4.83, 'weighted_ap' => 5.33],
+            'A'  => ['unweighted' => 4.00, 'weighted_honors' => 4.50, 'weighted_ap' => 5.00],
+            'A-' => ['unweighted' => 3.67, 'weighted_honors' => 4.17, 'weighted_ap' => 4.67],
+            'B+' => ['unweighted' => 3.33, 'weighted_honors' => 3.83, 'weighted_ap' => 4.33],
+            'B'  => ['unweighted' => 3.00, 'weighted_honors' => 3.50, 'weighted_ap' => 4.00],
+            'B-' => ['unweighted' => 2.67, 'weighted_honors' => 3.17, 'weighted_ap' => 3.67],
+            'C+' => ['unweighted' => 2.33, 'weighted_honors' => 2.33, 'weighted_ap' => 2.33],
+            'C'  => ['unweighted' => 2.00, 'weighted_honors' => 2.00, 'weighted_ap' => 2.00],
+            'C-' => ['unweighted' => 1.67, 'weighted_honors' => 1.67, 'weighted_ap' => 1.67],
+            'D+' => ['unweighted' => 1.33, 'weighted_honors' => 1.33, 'weighted_ap' => 1.33],
+            'D'  => ['unweighted' => 1.00, 'weighted_honors' => 1.00, 'weighted_ap' => 1.00],
+            'D-' => ['unweighted' => 0.67, 'weighted_honors' => 0.67, 'weighted_ap' => 0.67],
+            'F'  => ['unweighted' => 0.00, 'weighted_honors' => 0.00, 'weighted_ap' => 0.00],
+            'I'  => ['unweighted' => 0.00, 'weighted_honors' => 0.00, 'weighted_ap' => 0.00],
         ];
                 @endphp
 
@@ -175,26 +175,45 @@ p {
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
                         $totalUnweightedPoints = 0;
-                        $totalWeightedPoints = 0;
+                        $totalWeightedHonorsPoints = 0;
+                        $totalWeightedAPPoints = 0;
                         
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
-            $credit = $record->credit;
+                            $credit = $record->credit;
+                            $courseTitle = $record->coursetitle;
 
-            $totalCreditsAttempted += $credit;
+                            $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
-                $totalCreditsAwarded += $credit;
-            }
+                                $totalCreditsAwarded += $credit;
+                            }
+
+                            // Determine course type
+                            $courseType = 'unweighted';
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                $courseType = 'weighted_ap';
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                $courseType = 'weighted_honors';
+                            }
 
                             if (isset($gradePoints[$gradeValue])) {
                                 $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
+                                
+                                if ($courseType === 'weighted_ap') {
+                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
+                                } elseif ($courseType === 'weighted_honors') {
+                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
+                                } else {
+                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                }
                             }
                         }
                         
-         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
+                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
                         
                         // Get the school year from the first record of this grade level
                         $firstRecord = $records->first();
@@ -250,29 +269,48 @@ p {
                     @php
                         $grade = '10th';
                         $records = $gradeData[$grade];
-        $totalCreditsAttempted = 0;
-        $totalCreditsAwarded = 0;
-        $totalUnweightedPoints = 0;
-        $totalWeightedPoints = 0;
+                        $totalCreditsAttempted = 0;
+                        $totalCreditsAwarded = 0;
+                        $totalUnweightedPoints = 0;
+                        $totalWeightedHonorsPoints = 0;
+                        $totalWeightedAPPoints = 0;
 
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
-            $credit = $record->credit;
+                            $credit = $record->credit;
+                            $courseTitle = $record->coursetitle;
 
-            $totalCreditsAttempted += $credit;
+                            $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
-                $totalCreditsAwarded += $credit;
-            }
+                                $totalCreditsAwarded += $credit;
+                            }
+
+                            // Determine course type
+                            $courseType = 'unweighted';
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                $courseType = 'weighted_ap';
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                $courseType = 'weighted_honors';
+                            }
 
                             if (isset($gradePoints[$gradeValue])) {
                                 $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                $totalWeightedPoints += $gradePoints[$gradeValue]['weighted'] * $credit;
+                                
+                                if ($courseType === 'weighted_ap') {
+                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
+                                } elseif ($courseType === 'weighted_honors') {
+                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
+                                } else {
+                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                }
                             }
                         }
                         
-        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
+                        $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
+                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
+                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
                         
                         // Get the school year from the first record of this grade level
                         $firstRecord = $records->first();
@@ -430,9 +468,8 @@ p {
                         
         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
         $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
-                        
-                        // Get the school year from the first record of this grade level
-                        $firstRecord = $records->first();
+                                          // Get the school year from the first record of this grade level
+         $firstRecord = $records->first();
                         $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
     @endphp
                     <table width="100%">
