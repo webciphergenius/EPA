@@ -99,7 +99,7 @@ p {
             <div class="headImg"><img src="{{ public_path('script-logo.png') }}"></div>
             <div class="headTxt">
 		<h2>ELITE PREPARATORY ACADEMY</h2>
-                <p>Office of the Registrar <br>
+                <p><b>Office of the Registrar</b> <br>
                     452 Lakeside Blvd <br>
                     Hopatcong, NJ 07843 <br>
                     Phone: (732)397-7988 <br>
@@ -111,18 +111,18 @@ p {
             <table width="100%" style="border-top: 2px solid #000000; padding: 10px 0;">
                 <tbody>
                     <tr>
-                        <td>Name: {{ $student->name }}</td>
-                        <td>Date of Birth: {{ $student->dob->format('m/d/Y') }}</td>
-                        <td>Guardian: {{ $student->guardian_name ?? 'N/A' }}</td>
+                        <td><b>Name:</b> {{ $student->name }}</td>
+                        <td><b>Date of Birth:</b> {{ $student->dob->format('m/d/Y') }}</td>
+                        <td><b>Guardian:</b> {{ $student->guardian_name ?? 'N/A' }}</td>
 			</tr>
 			<tr>
-                        <td>Address: {{ $student->address ?? 'N/A' }}</td>
-                        <td>Gender: {{ $student->gender ?? 'N/A' }}</td>
-                        <td>Counselor: {{ $student->counselor ?? 'N/A' }}</td>
+                        <td><b>Address:</b> {{ $student->address ?? 'N/A' }}</td>
+                        <td><b>Gender:</b> {{ $student->gender ?? 'N/A' }}</td>
+                        <td><b>Counselor:</b> {{ $student->counselor ?? 'N/A' }}</td>
 			</tr>
                     <tr>
                         <td></td>
-                        <td>Date of Graduation: {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
+                        <td><b>Date of Graduation:</b> {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
                         <td></td>
 			</tr>
 		</tbody>
@@ -248,7 +248,7 @@ p {
 		@endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 10px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -259,7 +259,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -342,7 +342,7 @@ p {
   @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 10px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -353,7 +353,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -437,7 +437,7 @@ p {
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 10px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -448,7 +448,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -530,7 +530,7 @@ p {
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom: 10px;">Grade {{ $grade }} Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 10px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
@@ -541,7 +541,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -663,18 +663,19 @@ p {
 <div class="mainTableSecond">
     <div class="secondHead">
         <h3 style="text-align: center; font-size: 20px; padding-bottom: 20px;">TRANSCRIPT KEY</h3>
-        <p>Office of the Registrar <br>
+        <p><b style="font-size: 30px;">Office of the Registrar</b> <br>
             452 Lakeside Blvd <br>
             Hopatcong, NJ 07843 <br>
              Phone: (732)397-7988 <br>
             Email: contact@eliteprepacademy.org</p>
     </div>
+    <div class="lineBlank" style="height: 100px"></div>
     <div class="pdfsecondTable" style="padding: 2% 0 0 8%;">
         <table width="100%" text-align: left; padding: 10px;>
             <tbody>
                 <tr>
-                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grading System</td>
-                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 10px;">Grade Points</td>
+                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 15px;">Grading System</td>
+                    <td colspan="6" style="text-align: center; font-weight: 600; font-size: 15px;">Grade Points</td>
 			</tr>
 			<tr>
                     <td colspan="1" style="width: 100px;">A</td>
