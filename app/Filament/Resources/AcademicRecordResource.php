@@ -85,7 +85,7 @@ class AcademicRecordResource extends Resource
         'I' => 'I',
     ])
     ->default('A') // Set default value here
-    ->required(),
+    ->nullable(),
 
     Select::make('schoolyear')
     ->label('School Year')
