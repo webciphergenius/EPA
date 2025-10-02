@@ -133,7 +133,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 15px; padding: 0;">ACADEMIC RECORD</td>
+                        <td colspan="2" style="text-align: center; font-size: 15px; padding: 5px 0 0;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
@@ -259,7 +259,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; padding-left: 15px;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -353,7 +353,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -448,7 +448,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
@@ -541,7 +541,7 @@ p {
                             <tr>
                                 <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                 <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; margin-left: 15px;">{{ $record->grade }}</td>
+                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                             </tr>
                             @empty
                             @for($i = 0; $i < 8; $i++)
