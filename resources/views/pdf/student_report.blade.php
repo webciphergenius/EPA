@@ -111,18 +111,18 @@ p {
             <table width="100%" style="border-top: 2px solid #000000; padding: 10px 0;">
                 <tbody>
                     <tr>
-                        <td><b style="width: 150px;">Name:</b> {{ $student->name }}</td>
-                        <td><b style="width: 150px;">Date of Birth:</b> {{ $student->dob->format('m/d/Y') }}</td>
-                        <td><b style="width: 150px;">Guardian:</b> {{ $student->guardian_name ?? 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Name:</b> {{ $student->name }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Date of Birth:</b> {{ $student->dob->format('m/d/Y') }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Guardian:</b> {{ $student->guardian_name ?? 'N/A' }}</td>
 			</tr>
 			<tr>
-                        <td><b style="width: 150px;">Address:</b> {{ $student->address ?? 'N/A' }}</td>
-                        <td><b style="width: 150px;">Gender:</b> {{ $student->gender ?? 'N/A' }}</td>
-                        <td><b style="width: 150px;">Counselor:</b> {{ $student->counselor ?? 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Address:</b> {{ $student->address ?? 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Gender:</b> {{ $student->gender ?? 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Counselor:</b> {{ $student->counselor ?? 'N/A' }}</td>
 			</tr>
                     <tr>
                         <td></td>
-                        <td><b style="width: 150px;">Date of Graduation:</b> {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Date of Graduation:</b> {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
                         <td></td>
 			</tr>
 		</tbody>
