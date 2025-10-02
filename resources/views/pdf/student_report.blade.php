@@ -72,8 +72,8 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 550px;
-    min-height: 550px;
+    height: 540px;
+    min-height: 540px;
     max-height: 550px; 
     clear: both;
     padding: 30px 20px;
@@ -122,7 +122,7 @@ p {
 			</tr>
                     <tr>
                         <td></td>
-                        <td style="width: 100px;"><b>Date of Graduation:</b> {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
+                        <td><b>Date of Graduation:</b> {{ $student->graduation_date ? $student->graduation_date->format('m/d/Y') : 'N/A' }}</td>
                         <td></td>
 			</tr>
 		</tbody>
@@ -133,7 +133,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 10px; padding: 13px 0 0;">ACADEMIC RECORD</td>
+                        <td colspan="2" style="text-align: center; font-size: 15px; padding: 0;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
@@ -580,7 +580,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px;  ">OFFICIAL SCHOOL USE</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom:10px;">OFFICIAL SCHOOL USE</td>
 			</tr>
                 </tbody>
 	</table>
@@ -669,7 +669,7 @@ p {
              Phone: (732)397-7988 <br>
             Email: contact@eliteprepacademy.org</p>
     </div>
-    <div class="lineBlank" style="height: 100px"></div>
+    <div class="lineBlank" style="height: 50px"></div>
     <div class="pdfsecondTable" style="padding: 2% 0 0 8%;">
         <table width="100%" text-align: left; padding: 10px;>
             <tbody>
