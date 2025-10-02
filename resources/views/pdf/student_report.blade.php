@@ -612,14 +612,14 @@ p {
                                         // Unweighted GPA calculation
                                         $cumulativeUnweightedPoints += $basePoints * $credit;
                                         
-                                        // Weighted GPA calculation
+                                        // Weighted GPA calculation using predefined scales
                                         $weightedPoints = $basePoints;
                                         if (stripos($courseTitle, 'AP') !== false) {
-                                            // AP classes: add 1.0 to the base grade points
-                                            $weightedPoints = $basePoints + 1.0;
+                                            // AP classes: use predefined weighted AP scale
+                                            $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
                                         } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                            // Honors classes: add 0.5 to the base grade points
-                                            $weightedPoints = $basePoints + 0.5;
+                                            // Honors classes: use predefined weighted Honors scale
+                                            $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                                         }
                                         // Regular classes: no adjustment (weightedPoints = basePoints)
                                         
