@@ -150,20 +150,20 @@ p {
                     
                     // Define grade points for calculations
         $gradePoints = [
-            'A+' => ['unweighted' => 4.00, 'weighted_honors' => 4.83, 'weighted_ap' => 5.33],
-            'A'  => ['unweighted' => 4.00, 'weighted_honors' => 4.50, 'weighted_ap' => 5.00],
-            'A-' => ['unweighted' => 3.67, 'weighted_honors' => 4.17, 'weighted_ap' => 4.67],
-            'B+' => ['unweighted' => 3.33, 'weighted_honors' => 3.83, 'weighted_ap' => 4.33],
-            'B'  => ['unweighted' => 3.00, 'weighted_honors' => 3.50, 'weighted_ap' => 4.00],
-            'B-' => ['unweighted' => 2.67, 'weighted_honors' => 3.17, 'weighted_ap' => 3.67],
-            'C+' => ['unweighted' => 2.33, 'weighted_honors' => 2.33, 'weighted_ap' => 2.33],
-            'C'  => ['unweighted' => 2.00, 'weighted_honors' => 2.00, 'weighted_ap' => 2.00],
-            'C-' => ['unweighted' => 1.67, 'weighted_honors' => 1.67, 'weighted_ap' => 1.67],
-            'D+' => ['unweighted' => 1.33, 'weighted_honors' => 1.33, 'weighted_ap' => 1.33],
-            'D'  => ['unweighted' => 1.00, 'weighted_honors' => 1.00, 'weighted_ap' => 1.00],
-            'D-' => ['unweighted' => 0.67, 'weighted_honors' => 0.67, 'weighted_ap' => 0.67],
-            'F'  => ['unweighted' => 0.00, 'weighted_honors' => 0.00, 'weighted_ap' => 0.00],
-            'I'  => ['unweighted' => 0.00, 'weighted_honors' => 0.00, 'weighted_ap' => 0.00],
+            'A+' => 4.0,
+            'A'  => 4.0,
+            'A-' => 3.7,
+            'B+' => 3.3,
+            'B'  => 3.0,
+            'B-' => 2.7,
+            'C+' => 2.3,
+            'C'  => 2.0,
+            'C-' => 1.7,
+            'D+' => 1.3,
+            'D'  => 1.0,
+            'D-' => 0.7,
+            'F'  => 0.0,
+            'I'  => 0.0,
         ];
                 @endphp
 
@@ -175,8 +175,7 @@ p {
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
                         $totalUnweightedPoints = 0;
-                        $totalWeightedHonorsPoints = 0;
-                        $totalWeightedAPPoints = 0;
+                        $totalWeightedPoints = 0;
                         
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
@@ -189,31 +188,29 @@ p {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            // Determine course type
-                            $courseType = 'unweighted';
-                            if (stripos($courseTitle, 'AP') !== false) {
-                                $courseType = 'weighted_ap';
-                            } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                $courseType = 'weighted_honors';
-                            }
-
                             if (isset($gradePoints[$gradeValue])) {
-                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $basePoints = $gradePoints[$gradeValue];
                                 
-                                if ($courseType === 'weighted_ap') {
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
-                                } elseif ($courseType === 'weighted_honors') {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
-                                } else {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                // Unweighted GPA calculation
+                                $totalUnweightedPoints += $basePoints * $credit;
+                                
+                                // Weighted GPA calculation
+                                $weightedPoints = $basePoints;
+                                if (stripos($courseTitle, 'AP') !== false) {
+                                    // AP classes: add 1.0 to the base grade points
+                                    $weightedPoints = $basePoints + 1.0;
+                                } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                    // Honors classes: add 0.5 to the base grade points
+                                    $weightedPoints = $basePoints + 0.5;
                                 }
+                                // Regular classes: no adjustment (weightedPoints = basePoints)
+                                
+                                $totalWeightedPoints += $weightedPoints * $credit;
                             }
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
-                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
+                        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
                         
                         // Get the school year from the first record of this grade level
                         $firstRecord = $records->first();
@@ -254,12 +251,8 @@ p {
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted honors):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedHonorsGPA, 3) : 'N/A' }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted AP):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedAPGPA, 3) : 'N/A' }}</td>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term Credits:</td>
@@ -276,8 +269,7 @@ p {
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
                         $totalUnweightedPoints = 0;
-                        $totalWeightedHonorsPoints = 0;
-                        $totalWeightedAPPoints = 0;
+                        $totalWeightedPoints = 0;
 
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
@@ -290,31 +282,29 @@ p {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            // Determine course type
-                            $courseType = 'unweighted';
-                            if (stripos($courseTitle, 'AP') !== false) {
-                                $courseType = 'weighted_ap';
-                            } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                $courseType = 'weighted_honors';
-                            }
-
                             if (isset($gradePoints[$gradeValue])) {
-                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $basePoints = $gradePoints[$gradeValue];
                                 
-                                if ($courseType === 'weighted_ap') {
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
-                                } elseif ($courseType === 'weighted_honors') {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
-                                } else {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                // Unweighted GPA calculation
+                                $totalUnweightedPoints += $basePoints * $credit;
+                                
+                                // Weighted GPA calculation
+                                $weightedPoints = $basePoints;
+                                if (stripos($courseTitle, 'AP') !== false) {
+                                    // AP classes: add 1.0 to the base grade points
+                                    $weightedPoints = $basePoints + 1.0;
+                                } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                    // Honors classes: add 0.5 to the base grade points
+                                    $weightedPoints = $basePoints + 0.5;
                                 }
+                                // Regular classes: no adjustment (weightedPoints = basePoints)
+                                
+                                $totalWeightedPoints += $weightedPoints * $credit;
                             }
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
-                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
+                        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
                         
                         // Get the school year from the first record of this grade level
                         $firstRecord = $records->first();
@@ -355,8 +345,8 @@ p {
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted honors):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedHonorsGPA, 3) : 'N/A' }}</td>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
     </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term Credits:</td>
@@ -374,8 +364,7 @@ p {
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
                         $totalUnweightedPoints = 0;
-                        $totalWeightedHonorsPoints = 0;
-                        $totalWeightedAPPoints = 0;
+                        $totalWeightedPoints = 0;
 
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
@@ -388,31 +377,29 @@ p {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            // Determine course type
-                            $courseType = 'unweighted';
-                            if (stripos($courseTitle, 'AP') !== false) {
-                                $courseType = 'weighted_ap';
-                            } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                $courseType = 'weighted_honors';
-                            }
-
                             if (isset($gradePoints[$gradeValue])) {
-                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $basePoints = $gradePoints[$gradeValue];
                                 
-                                if ($courseType === 'weighted_ap') {
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
-                                } elseif ($courseType === 'weighted_honors') {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
-                                } else {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                // Unweighted GPA calculation
+                                $totalUnweightedPoints += $basePoints * $credit;
+                                
+                                // Weighted GPA calculation
+                                $weightedPoints = $basePoints;
+                                if (stripos($courseTitle, 'AP') !== false) {
+                                    // AP classes: add 1.0 to the base grade points
+                                    $weightedPoints = $basePoints + 1.0;
+                                } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                    // Honors classes: add 0.5 to the base grade points
+                                    $weightedPoints = $basePoints + 0.5;
                                 }
+                                // Regular classes: no adjustment (weightedPoints = basePoints)
+                                
+                                $totalWeightedPoints += $weightedPoints * $credit;
                             }
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
-                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
+                        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
                         
                         // Get the school year from the first record of this grade level
                         $firstRecord = $records->first();
@@ -453,12 +440,8 @@ p {
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted honors):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedHonorsGPA, 3) : 'N/A' }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted AP):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedAPGPA, 3) : 'N/A' }}</td>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term Credits:</td>
@@ -475,8 +458,7 @@ p {
                         $totalCreditsAttempted = 0;
                         $totalCreditsAwarded = 0;
                         $totalUnweightedPoints = 0;
-                        $totalWeightedHonorsPoints = 0;
-                        $totalWeightedAPPoints = 0;
+                        $totalWeightedPoints = 0;
 
                         foreach ($records as $record) {
                             $gradeValue = $record->grade;
@@ -489,31 +471,29 @@ p {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            // Determine course type
-                            $courseType = 'unweighted';
-                            if (stripos($courseTitle, 'AP') !== false) {
-                                $courseType = 'weighted_ap';
-                            } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                $courseType = 'weighted_honors';
-                            }
-
                             if (isset($gradePoints[$gradeValue])) {
-                                $totalUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                $basePoints = $gradePoints[$gradeValue];
                                 
-                                if ($courseType === 'weighted_ap') {
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
-                                } elseif ($courseType === 'weighted_honors') {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
-                                } else {
-                                    $totalWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                    $totalWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                // Unweighted GPA calculation
+                                $totalUnweightedPoints += $basePoints * $credit;
+                                
+                                // Weighted GPA calculation
+                                $weightedPoints = $basePoints;
+                                if (stripos($courseTitle, 'AP') !== false) {
+                                    // AP classes: add 1.0 to the base grade points
+                                    $weightedPoints = $basePoints + 1.0;
+                                } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                    // Honors classes: add 0.5 to the base grade points
+                                    $weightedPoints = $basePoints + 0.5;
                                 }
+                                // Regular classes: no adjustment (weightedPoints = basePoints)
+                                
+                                $totalWeightedPoints += $weightedPoints * $credit;
                             }
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
-                        $weightedHonorsGPA = $totalCreditsAttempted > 0 ? $totalWeightedHonorsPoints / $totalCreditsAttempted : 0;
-                        $weightedAPGPA = $totalCreditsAttempted > 0 ? $totalWeightedAPPoints / $totalCreditsAttempted : 0;
+                        $weightedGPA = $totalCreditsAttempted > 0 ? $totalWeightedPoints / $totalCreditsAttempted : 0;
                                           // Get the school year from the first record of this grade level
          $firstRecord = $records->first();
                         $schoolYear = $firstRecord ? $firstRecord->schoolyear : 'N/A';
@@ -553,12 +533,8 @@ p {
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted honors):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedHonorsGPA, 3) : 'N/A' }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="8" style="text-align: left;">Term GPA (weighted AP):</td>
-                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedAPGPA, 3) : 'N/A' }}</td>
+                                <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
+                                <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
                             </tr>
                             <tr>
                                 <td colspan="8" style="text-align: left;">Term Credits:</td>
@@ -587,8 +563,7 @@ p {
                                 $cumulativeCreditsAttempted = 0;
                                 $cumulativeCreditsAwarded = 0;
                                 $cumulativeUnweightedPoints = 0;
-                                $cumulativeWeightedHonorsPoints = 0;
-                                $cumulativeWeightedAPPoints = 0;
+                                $cumulativeWeightedPoints = 0;
                                 
                                 foreach ($academicRecords as $record) {
                                     $gradeValue = $record->grade;
@@ -601,43 +576,37 @@ p {
                                         $cumulativeCreditsAwarded += $credit;
                                     }
                                     
-                                    // Determine course type
-                                    $courseType = 'unweighted';
-                                    if (stripos($courseTitle, 'AP') !== false) {
-                                        $courseType = 'weighted_ap';
-                                    } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                        $courseType = 'weighted_honors';
-                                    }
-                                    
                                     if (isset($gradePoints[$gradeValue])) {
-                                        $cumulativeUnweightedPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                        $basePoints = $gradePoints[$gradeValue];
                                         
-                                        if ($courseType === 'weighted_ap') {
-                                            $cumulativeWeightedAPPoints += $gradePoints[$gradeValue]['weighted_ap'] * $credit;
-                                        } elseif ($courseType === 'weighted_honors') {
-                                            $cumulativeWeightedHonorsPoints += $gradePoints[$gradeValue]['weighted_honors'] * $credit;
-                                        } else {
-                                            $cumulativeWeightedHonorsPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
-                                            $cumulativeWeightedAPPoints += $gradePoints[$gradeValue]['unweighted'] * $credit;
+                                        // Unweighted GPA calculation
+                                        $cumulativeUnweightedPoints += $basePoints * $credit;
+                                        
+                                        // Weighted GPA calculation
+                                        $weightedPoints = $basePoints;
+                                        if (stripos($courseTitle, 'AP') !== false) {
+                                            // AP classes: add 1.0 to the base grade points
+                                            $weightedPoints = $basePoints + 1.0;
+                                        } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                            // Honors classes: add 0.5 to the base grade points
+                                            $weightedPoints = $basePoints + 0.5;
                                         }
+                                        // Regular classes: no adjustment (weightedPoints = basePoints)
+                                        
+                                        $cumulativeWeightedPoints += $weightedPoints * $credit;
                                     }
                                 }
                                 
                                 $cumulativeUnweightedGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeUnweightedPoints / $cumulativeCreditsAttempted : 0;
-                                $cumulativeWeightedHonorsGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeWeightedHonorsPoints / $cumulativeCreditsAttempted : 0;
-                                $cumulativeWeightedAPGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeWeightedAPPoints / $cumulativeCreditsAttempted : 0;
+                                $cumulativeWeightedGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeWeightedPoints / $cumulativeCreditsAttempted : 0;
                             @endphp
                             <tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (unweighted): </td>
                                 <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
 			</tr>
 			<tr>
-                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted honors): </td>
-                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedHonorsGPA, 3) }}</td>
-			</tr>
-			<tr>
-                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted AP): </td>
-                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedAPGPA, 3) }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted): </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
 			</tr>
 			<tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Cum Credits: </td>
