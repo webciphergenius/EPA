@@ -133,7 +133,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 15px; padding: 5px 0 0;">ACADEMIC RECORD</td>
+                        <td colspan="2" style="text-align: center; font-size: 15px; font-weight: 600; padding: 5px 0 0;">ACADEMIC RECORD</td>
                     </tr>
                 </tbody>
             </table>
@@ -580,7 +580,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; padding-bottom:10px;">OFFICIAL SCHOOL USE</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom:10px;">OFFICIAL SCHOOL USE</td>
 			</tr>
                 </tbody>
 	</table>
