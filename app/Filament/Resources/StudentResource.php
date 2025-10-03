@@ -67,8 +67,11 @@ class StudentResource extends Resource
     }
     public static function exportStudentPdf($record)
 {
-    $student = $record;
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
     $academicRecords = $student->academicRecords;
+    
+    Log::info('Student data for PDF:', $student->toArray());
     Log::info('Academic records:', $academicRecords->toArray());
 
     $pdf = Pdf::loadView('pdf.student_report', [
@@ -84,7 +87,8 @@ class StudentResource extends Resource
 
 public static function previewStudentPdf($record)
 {
-    $student = $record;
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
     $academicRecords = $student->academicRecords;
 
     $pdf = Pdf::loadView('pdf.student_report', [

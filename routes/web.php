@@ -14,5 +14,7 @@ Route::get('/pdf', function () {
 });
 
 Route::get('/admin/students/{record}/preview', function (Student $record) {
-    return StudentResource::previewStudentPdf($record);
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
+    return StudentResource::previewStudentPdf($student);
 })->name('filament.admin.resources.students.preview');
