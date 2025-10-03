@@ -118,7 +118,7 @@ p {
 			<tr>
                         <td><b style="width: 150px; display: inline-block;">Address:</b> {{ $student->address ?? 'N/A' }}</td>
                         <td><b style="width: 150px; display: inline-block;">Gender:</b> {{ $student->gender ?? 'N/A' }}</td>
-                        <td><b style="width: 150px; display: inline-block;">Counselor:</b> {{ $academicRecords->whereNotNull('counselor')->pluck('counselor')->unique()->implode(', ') ?: 'N/A' }}</td>
+                        <td><b style="width: 150px; display: inline-block;">Counselor:</b> {{ $student->counselor ?? 'N/A' }}</td>
 			</tr>
                     <tr>
                         <td></td>

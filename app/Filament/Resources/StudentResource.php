@@ -59,6 +59,10 @@ class StudentResource extends Resource
                 TextInput::make('phone_number')
                     ->label('Phone Number')
                     ->maxLength(255),
+                TextInput::make('counselor')
+                    ->label('Counselor')
+                    ->maxLength(255)
+                    ->nullable(),
             ]);
     }
     public static function exportStudentPdf($record)
@@ -106,6 +110,7 @@ public static function previewStudentPdf($record)
                 TextColumn::make('guardian_name')->label('Guardian Name'),
                 TextColumn::make('address')->label('Address'),
                 TextColumn::make('phone_number')->label('Phone Number'),
+                TextColumn::make('counselor')->label('Counselor')->sortable()->searchable(),
                 
             ])
             ->filters([

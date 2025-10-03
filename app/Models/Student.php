@@ -16,6 +16,7 @@ class Student extends Model
         'guardian_name',
         'address',
         'phone_number',
+        'counselor',
     ];
     protected $casts = [
         'dob' => 'date',
