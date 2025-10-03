@@ -21,6 +21,10 @@ class StudentRelationManager extends RelationManager
                 Forms\Components\TextInput::make('coursetitle')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('counselor')
+                    ->label('Counselor')
+                    ->maxLength(255)
+                    ->nullable(),
             ]);
     }
 
@@ -30,6 +34,7 @@ class StudentRelationManager extends RelationManager
             ->recordTitleAttribute('coursetitle')
             ->columns([
                 Tables\Columns\TextColumn::make('coursetitle'),
+                Tables\Columns\TextColumn::make('counselor'),
             ])
             ->filters([
                 //

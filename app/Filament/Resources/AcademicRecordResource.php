@@ -115,6 +115,11 @@ Select::make('gradelevel')
 ])
 ->default('9TH') // Optional default
 ->required(),
+
+Forms\Components\TextInput::make('counselor')
+->label('Counselor')
+->maxLength(255)
+->nullable(),
     ]);
 
     }
@@ -138,6 +143,7 @@ Select::make('gradelevel')
                 TextColumn::make('credit')->sortable(),
                 TextColumn::make('schoolyear')->label('School Year'),
                 TextColumn::make('gradelevel')->label('Grade Level'),
+                TextColumn::make('counselor')->sortable()->searchable(),
             ])
             ->filters([
                 //
