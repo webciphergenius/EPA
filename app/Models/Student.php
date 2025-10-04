@@ -14,6 +14,7 @@ class Student extends Model
         'gender',
         'graduation_date',
         'issue_date',
+        'note',
         'guardian_name',
         'address',
         'phone_number',

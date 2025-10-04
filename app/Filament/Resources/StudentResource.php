@@ -14,6 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -54,6 +55,11 @@ class StudentResource extends Resource
                     ->label('Issue Date')
                     ->nullable()
                     ->helperText('Leave blank to use current date in PDF'),
+                Textarea::make('note')
+                    ->label('Note')
+                    ->nullable()
+                    ->rows(3)
+                    ->helperText('This note will appear in the PDF under the ACADEMIC RECORD heading'),
                 TextInput::make('guardian_name')
                     ->label('Guardian Name')
                     ->maxLength(255),
@@ -116,6 +122,7 @@ public static function previewStudentPdf($record)
                 TextColumn::make('gender')->label('Gender'),
                 TextColumn::make('graduation_date')->label('Graduation Date')->date(),
                 TextColumn::make('issue_date')->label('Issue Date')->date(),
+                TextColumn::make('note')->label('Note')->limit(50),
                 TextColumn::make('guardian_name')->label('Guardian Name'),
                 TextColumn::make('address')->label('Address'),
                 TextColumn::make('phone_number')->label('Phone Number'),
