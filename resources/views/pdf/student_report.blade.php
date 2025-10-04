@@ -140,9 +140,9 @@ p {
             </table>
             
             @if($student->note)
-            
+            <div style="padding: 10px 20px; text-align: center;">
                 <p style="font-size: 10px; font-style: italic; color: #333; margin: 0;">{{ $student->note }}</p>
-            
+            </div>
             @endif
 	
             <div class="tabletwo mainCol">
