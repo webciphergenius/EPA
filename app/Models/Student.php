@@ -13,6 +13,7 @@ class Student extends Model
         'email',
         'gender',
         'graduation_date',
+        'issue_date',
         'guardian_name',
         'address',
         'phone_number',
@@ -21,6 +22,7 @@ class Student extends Model
     protected $casts = [
         'dob' => 'date',
         'graduation_date' => 'date',
+        'issue_date' => 'date',
     ];
     public function academicRecords()
     {

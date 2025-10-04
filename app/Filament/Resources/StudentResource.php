@@ -50,6 +50,10 @@ class StudentResource extends Resource
                 DatePicker::make('graduation_date')
                     ->label('Graduation Date')
                     ->nullable(),
+                DatePicker::make('issue_date')
+                    ->label('Issue Date')
+                    ->nullable()
+                    ->helperText('Leave blank to use current date in PDF'),
                 TextInput::make('guardian_name')
                     ->label('Guardian Name')
                     ->maxLength(255),
@@ -111,6 +115,7 @@ public static function previewStudentPdf($record)
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('gender')->label('Gender'),
                 TextColumn::make('graduation_date')->label('Graduation Date')->date(),
+                TextColumn::make('issue_date')->label('Issue Date')->date(),
                 TextColumn::make('guardian_name')->label('Guardian Name'),
                 TextColumn::make('address')->label('Address'),
                 TextColumn::make('phone_number')->label('Phone Number'),

@@ -645,7 +645,7 @@ p {
 			</tr>
 			<tr>
                                 <td colspan="8" style="text-align: left; font-size: 10px;">Issue Date: </td>
-                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ date('m/d/Y') }}</td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ $student->issue_date ? $student->issue_date->format('m/d/Y') : date('m/d/Y') }}</td>
 			</tr>
                         </tbody>
                     </table>
