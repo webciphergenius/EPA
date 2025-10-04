@@ -795,7 +795,7 @@ p {
 			</tr>
 			<tr>
                     <td colspan="5" style="text-align: left;">Health/Physical Education</td>
-                    <td colspan="2" style="text-align: left;">16</td>
+                    <td colspan="2" style="text-align: left;">12</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: center;">D+</td>
                     <td colspan="1" style="text-align: center;">1.33</td>
