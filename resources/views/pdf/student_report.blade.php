@@ -72,16 +72,16 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 540px;
-    min-height: 540px;
-    max-height: 550px; 
+    height: 530px;
+    min-height: 530px;
+    max-height: 530px; 
     clear: both;
     padding: 30px 20px;
 }
 .mainCol .column {
-    height: 325px;
-    min-height: 325px;
-    max-height: 325px;
+    height: 315px;
+    min-height: 315px;
+    max-height: 315px;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -138,7 +138,7 @@ p {
                     </tr>
                     @if($student->note)
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
                     </tr>
                     @endif
                 </tbody>
