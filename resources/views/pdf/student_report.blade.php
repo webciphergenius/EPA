@@ -134,13 +134,13 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center; font-size: 15px; font-weight: 600; padding: 5px 0 0;">ACADEMIC RECORD</td>
+                        <td colspan="12" style="text-align: center; font-size: 15px; font-weight: 600; padding: 5px 0 0;">ACADEMIC RECORD</td>
                     </tr>
                     @if($student->note)
-            <div style="padding: 10px 20px; text-align: center;">
-                <p style="font-size: 10px; font-style: italic; color: #333; margin: 0;">{{ $student->note }}</p>
-            </div>
-            @endif
+                    <tr>
+                        <td colspan="2" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
+                    </tr>
+                    @endif
                 </tbody>
             </table>
             
