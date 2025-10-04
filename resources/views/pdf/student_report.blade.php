@@ -136,14 +136,15 @@ p {
                     <tr>
                         <td colspan="2" style="text-align: center; font-size: 15px; font-weight: 600; padding: 5px 0 0;">ACADEMIC RECORD</td>
                     </tr>
-                </tbody>
-            </table>
-            
-            @if($student->note)
+                    @if($student->note)
             <div style="padding: 10px 20px; text-align: center;">
                 <p style="font-size: 10px; font-style: italic; color: #333; margin: 0;">{{ $student->note }}</p>
             </div>
             @endif
+                </tbody>
+            </table>
+            
+            
 	
             <div class="tabletwo mainCol">
                 @php
