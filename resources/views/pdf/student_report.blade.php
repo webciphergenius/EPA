@@ -15,7 +15,7 @@
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
-    padding: 40px 70px 20px;
+    padding: 30px 70px 20px;
 }
 .column:nth-child(2), .columns:nth-child(2) {
     padding-left: 5%;
@@ -58,7 +58,7 @@ p {
 }
 .pdfsubhead {
     clear: both;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 .tabletwo {
 	clear: both;
@@ -72,16 +72,16 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 530px;
-    min-height: 530px;
-    max-height: 530px; 
+    height: 540px;
+    min-height: 540px;
+    max-height: 540px; 
     clear: both;
-    padding: 30px 20px;
+    padding: 20px;
 }
 .mainCol .column {
-    height: 315px;
-    min-height: 315px;
-    max-height: 315px;
+    height: 325px;
+    min-height: 325px;
+    max-height: 325px;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -584,7 +584,7 @@ p {
 	</div>
 </div>
 
-        <div class="pdffirstFooter" style="clear: both; padding: 10px 0 0 ">
+        <div class="pdffirstFooter" style="clear: both; padding: 5px 0 0 ">
             <table width="100%">
                 <tbody>
                     <tr>
