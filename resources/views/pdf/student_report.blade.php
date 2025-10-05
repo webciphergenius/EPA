@@ -58,7 +58,7 @@ p {
 }
 .pdfsubhead {
     clear: both;
-    padding-top: 0px;
+    padding-top: 10px;
 }
 .tabletwo {
 	clear: both;
@@ -72,16 +72,16 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 550px;
-    min-height: 550px;
-    max-height: 550px; 
+    height: 560px;
+    min-height: 560px;
+    max-height: 560px; 
     clear: both;
     padding: 20px;
 }
 .mainCol .column {
-    height: 335px;
-    min-height: 335px;
-    max-height: 335px;
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -134,11 +134,11 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 15px; font-weight: 600; padding: 5px 0 0;">ACADEMIC RECORD</td>
+                        <td colspan="12" style="text-align: center; font-size: 13px; font-weight: 600; padding: 2px 0 0;">ACADEMIC RECORD</td>
                     </tr>
                     @if($student->note)
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
+                        <td colspan="12" style="text-align: center; font-size: 9px; font-style: italic; color: #333">{{ $student->note }}</td>
                     </tr>
                     @endif
                 </tbody>
