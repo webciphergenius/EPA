@@ -72,16 +72,16 @@ p {
     clear: both;
 }
 .mainCol {
-    height: 540px;
-    min-height: 540px;
-    max-height: 540px; 
+    height: 550px;
+    min-height: 550px;
+    max-height: 550px; 
     clear: both;
     padding: 20px;
 }
 .mainCol .column {
-    height: 325px;
-    min-height: 325px;
-    max-height: 325px;
+    height: 335px;
+    min-height: 335px;
+    max-height: 335px;
 }
 .mainTableSecond p {
     font-size: 10px;
