@@ -79,17 +79,17 @@ p {
     padding: 20px;
 }
 .mainCol .column {
-    height: 320px;
-    min-height: 320px;
-    max-height: 320px;
+    height: 310px;
+    min-height: 310px;
+    max-height: 310px;
 }
 .tabletwo .column {
     position: relative;
 }
 .tableHeight {
-    height: 190px;
-    min-height: 190px;
-    max-height: 190px;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
     overflow: hidden;
     width: 100%;
 }
@@ -378,7 +378,10 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
+                            </tbody>
+                    </table>
                             <table class="tableHeight" width="100%">
+                                <tbody>
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
@@ -394,7 +397,10 @@ p {
                                 </tr>
                                 @endfor
                                 @endforelse
+                            </tbody>
                             </table>
+                            <table width="100%">
+                                <tbody>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
@@ -476,7 +482,10 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
+                            </tbody>
+                    </table>
                             <table class="tableHeight" width="100%">
+                                <tbody>
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
@@ -492,7 +501,10 @@ p {
                                 </tr>
                                 @endfor
                                 @endforelse
+                           </tbody>
                             </table>
+                            <table width="100%">
+                                <tbody>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
@@ -572,7 +584,10 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
+                            </tbody>
+                    </table>
                             <table class="tableHeight" width="100%">
+                                <tbody>
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
@@ -588,7 +603,10 @@ p {
                                 </tr>
                                 @endfor
                                 @endforelse
+                            </tbody>
                             </table>
+                            <table width="100%">
+                                <tbody>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
