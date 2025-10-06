@@ -9,7 +9,7 @@
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.2;
 }
 .mainTableFirst {
@@ -53,7 +53,7 @@
     margin-bottom: 12px;
 }
 p {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.4;
 }
 .pdfsubhead {
@@ -79,12 +79,12 @@ p {
     padding: 20px;
 }
 .mainCol .column {
-    height: 340px;
-    min-height: 340px;
-    max-height: 340px;
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
 }
 .mainTableSecond p {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.5;
 }
 .secondHead {
@@ -138,7 +138,7 @@ p {
                     </tr>
                     @if($student->note)
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 9px; font-style: italic; color: #333">{{ $student->note }}</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
                     </tr>
                     @endif
                 </tbody>
@@ -259,11 +259,11 @@ p {
 		@endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 9px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px; text-decoration: underline;">Course</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Credits</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Grade</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
                             
                             @forelse($records as $record)
@@ -356,11 +356,11 @@ p {
   @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 9px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px; text-decoration: underline;">Course</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Credits</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Grade</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
                             
                             @forelse($records as $record)
@@ -454,11 +454,11 @@ p {
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 9px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px; text-decoration: underline;">Course</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Credits</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Grade</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
                             
                             @forelse($records as $record)
@@ -550,11 +550,11 @@ p {
     @endphp
                     <table width="100%">
                         <tbody>
-                            <td colspan="12" style="text-align: center; font-size: 9px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
+                            <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px; text-decoration: underline;">Course</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Credits</td>
-                                <td colspan="1" style="text-align: center; font-size: 9px; text-decoration: underline;">Grade</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
                             
                             @forelse($records as $record)
@@ -600,7 +600,7 @@ p {
             <table width="100%">
                 <tbody>
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 9px; font-weight: 600; padding-bottom:9px;">OFFICIAL SCHOOL USE</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom:9px;">OFFICIAL SCHOOL USE</td>
 			</tr>
                 </tbody>
 	</table>
@@ -654,20 +654,20 @@ p {
                                 $cumulativeWeightedGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeWeightedPoints / $cumulativeCreditsAttempted : 0;
                             @endphp
                             <tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px;">Cum GPA (unweighted): </td>
-                                <td colspan="2" style="text-align: right; font-size: 9px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (unweighted): </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeUnweightedGPA, 3) }}</td>
 			</tr>
 			<tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px;">Cum GPA (weighted): </td>
-                                <td colspan="2" style="text-align: right; font-size: 9px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum GPA (weighted): </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ number_format($cumulativeWeightedGPA, 3) }}</td>
 			</tr>
 			<tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px;">Cum Credits: </td>
-                                <td colspan="2" style="text-align: right; font-size: 9px;">{{ $cumulativeCreditsAttempted }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Cum Credits: </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ $cumulativeCreditsAttempted }}</td>
 			</tr>
 			<tr>
-                                <td colspan="8" style="text-align: left; font-size: 9px;">Issue Date: </td>
-                                <td colspan="2" style="text-align: right; font-size: 9px;">{{ $student->issue_date ? $student->issue_date->format('m/d/Y') : date('m/d/Y') }}</td>
+                                <td colspan="8" style="text-align: left; font-size: 10px;">Issue Date: </td>
+                                <td colspan="2" style="text-align: right; font-size: 10px;">{{ $student->issue_date ? $student->issue_date->format('m/d/Y') : date('m/d/Y') }}</td>
 			</tr>
                         </tbody>
                     </table>
@@ -679,7 +679,7 @@ p {
                     </div>
                 </div>
             </div>
-            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 9px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
         </div>
     </div>
 </div>
@@ -864,7 +864,7 @@ p {
 		</tbody>
 	</table>
 	</div>
-    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 9px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
 </div>
 </body>
 </html>
