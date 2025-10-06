@@ -84,7 +84,7 @@ p {
     max-height: 320px;
 }
 .mainCol .column td, .columns td {
-    height: 20px;
+    height: 12px;
 }
 .mainTableSecond p {
     font-size: 10px;
