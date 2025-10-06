@@ -44,6 +44,11 @@ if (!function_exists('calculateGPA')) {
             $credit = $record['credit'];
             $courseTitle = $record['coursetitle'];
 
+            // Skip courses without grades (in-progress courses)
+            if (empty($grade) || !isset($gradePoints[$grade])) {
+                continue;
+            }
+
             // Add to total credits attempted
             $totalCreditsAttempted += $credit;
 

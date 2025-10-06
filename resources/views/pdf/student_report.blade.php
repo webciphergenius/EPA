@@ -220,31 +220,34 @@ p {
                             $credit = $record->credit;
                             $courseTitle = $record->coursetitle;
 
+                            // Skip courses without grades (in-progress courses)
+                            if (empty($gradeValue) || !isset($gradePoints[$gradeValue])) {
+                                continue;
+                            }
+
                             $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            if (isset($gradePoints[$gradeValue])) {
-                                $basePoints = $gradePoints[$gradeValue];
-                                
-                                // Unweighted GPA calculation
-                                $totalUnweightedPoints += $basePoints * $credit;
-                                
-                                // Weighted GPA calculation using predefined scales
-                                $weightedPoints = $basePoints;
-                                if (stripos($courseTitle, 'AP') !== false) {
-                                    // AP classes: use predefined weighted AP scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
-                                } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                    // Honors classes: use predefined weighted Honors scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
-                                }
-                                // Regular classes: no adjustment (weightedPoints = basePoints)
-                                
-                                $totalWeightedPoints += $weightedPoints * $credit;
+                            $basePoints = $gradePoints[$gradeValue];
+                            
+                            // Unweighted GPA calculation
+                            $totalUnweightedPoints += $basePoints * $credit;
+                            
+                            // Weighted GPA calculation using predefined scales
+                            $weightedPoints = $basePoints;
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                // AP classes: use predefined weighted AP scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                // Honors classes: use predefined weighted Honors scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                             }
+                            // Regular classes: no adjustment (weightedPoints = basePoints)
+                            
+                            $totalWeightedPoints += $weightedPoints * $credit;
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
@@ -314,31 +317,34 @@ p {
                             $credit = $record->credit;
                             $courseTitle = $record->coursetitle;
 
+                            // Skip courses without grades (in-progress courses)
+                            if (empty($gradeValue) || !isset($gradePoints[$gradeValue])) {
+                                continue;
+                            }
+
                             $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            if (isset($gradePoints[$gradeValue])) {
-                                $basePoints = $gradePoints[$gradeValue];
-                                
-                                // Unweighted GPA calculation
-                                $totalUnweightedPoints += $basePoints * $credit;
-                                
-                                // Weighted GPA calculation using predefined scales
-                                $weightedPoints = $basePoints;
-                                if (stripos($courseTitle, 'AP') !== false) {
-                                    // AP classes: use predefined weighted AP scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
-                                } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                    // Honors classes: use predefined weighted Honors scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
-                                }
-                                // Regular classes: no adjustment (weightedPoints = basePoints)
-                                
-                                $totalWeightedPoints += $weightedPoints * $credit;
+                            $basePoints = $gradePoints[$gradeValue];
+                            
+                            // Unweighted GPA calculation
+                            $totalUnweightedPoints += $basePoints * $credit;
+                            
+                            // Weighted GPA calculation using predefined scales
+                            $weightedPoints = $basePoints;
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                // AP classes: use predefined weighted AP scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                // Honors classes: use predefined weighted Honors scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                             }
+                            // Regular classes: no adjustment (weightedPoints = basePoints)
+                            
+                            $totalWeightedPoints += $weightedPoints * $credit;
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
@@ -409,31 +415,34 @@ p {
                             $credit = $record->credit;
                             $courseTitle = $record->coursetitle;
 
+                            // Skip courses without grades (in-progress courses)
+                            if (empty($gradeValue) || !isset($gradePoints[$gradeValue])) {
+                                continue;
+                            }
+
                             $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            if (isset($gradePoints[$gradeValue])) {
-                                $basePoints = $gradePoints[$gradeValue];
-                                
-                                // Unweighted GPA calculation
-                                $totalUnweightedPoints += $basePoints * $credit;
-                                
-                                // Weighted GPA calculation using predefined scales
-                                $weightedPoints = $basePoints;
-                                if (stripos($courseTitle, 'AP') !== false) {
-                                    // AP classes: use predefined weighted AP scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
-                                } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                    // Honors classes: use predefined weighted Honors scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
-                                }
-                                // Regular classes: no adjustment (weightedPoints = basePoints)
-                                
-                                $totalWeightedPoints += $weightedPoints * $credit;
+                            $basePoints = $gradePoints[$gradeValue];
+                            
+                            // Unweighted GPA calculation
+                            $totalUnweightedPoints += $basePoints * $credit;
+                            
+                            // Weighted GPA calculation using predefined scales
+                            $weightedPoints = $basePoints;
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                // AP classes: use predefined weighted AP scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                // Honors classes: use predefined weighted Honors scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                             }
+                            // Regular classes: no adjustment (weightedPoints = basePoints)
+                            
+                            $totalWeightedPoints += $weightedPoints * $credit;
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
@@ -503,31 +512,34 @@ p {
                             $credit = $record->credit;
                             $courseTitle = $record->coursetitle;
 
+                            // Skip courses without grades (in-progress courses)
+                            if (empty($gradeValue) || !isset($gradePoints[$gradeValue])) {
+                                continue;
+                            }
+
                             $totalCreditsAttempted += $credit;
 
                             if (!in_array($gradeValue, ['F', 'I'])) {
                                 $totalCreditsAwarded += $credit;
                             }
 
-                            if (isset($gradePoints[$gradeValue])) {
-                                $basePoints = $gradePoints[$gradeValue];
-                                
-                                // Unweighted GPA calculation
-                                $totalUnweightedPoints += $basePoints * $credit;
-                                
-                                // Weighted GPA calculation using predefined scales
-                                $weightedPoints = $basePoints;
-                                if (stripos($courseTitle, 'AP') !== false) {
-                                    // AP classes: use predefined weighted AP scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
-                                } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                    // Honors classes: use predefined weighted Honors scale
-                                    $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
-                                }
-                                // Regular classes: no adjustment (weightedPoints = basePoints)
-                                
-                                $totalWeightedPoints += $weightedPoints * $credit;
+                            $basePoints = $gradePoints[$gradeValue];
+                            
+                            // Unweighted GPA calculation
+                            $totalUnweightedPoints += $basePoints * $credit;
+                            
+                            // Weighted GPA calculation using predefined scales
+                            $weightedPoints = $basePoints;
+                            if (stripos($courseTitle, 'AP') !== false) {
+                                // AP classes: use predefined weighted AP scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
+                            } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                // Honors classes: use predefined weighted Honors scale
+                                $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                             }
+                            // Regular classes: no adjustment (weightedPoints = basePoints)
+                            
+                            $totalWeightedPoints += $weightedPoints * $credit;
                         }
                         
                         $unweightedGPA = $totalCreditsAttempted > 0 ? $totalUnweightedPoints / $totalCreditsAttempted : 0;
@@ -608,31 +620,34 @@ p {
                                     $credit = $record->credit;
                                     $courseTitle = $record->coursetitle;
                                     
+                                    // Skip courses without grades (in-progress courses)
+                                    if (empty($gradeValue) || !isset($gradePoints[$gradeValue])) {
+                                        continue;
+                                    }
+                                    
                                     $cumulativeCreditsAttempted += $credit;
                                     
                                     if (!in_array($gradeValue, ['F', 'I'])) {
                                         $cumulativeCreditsAwarded += $credit;
                                     }
                                     
-                                    if (isset($gradePoints[$gradeValue])) {
-                                        $basePoints = $gradePoints[$gradeValue];
-                                        
-                                        // Unweighted GPA calculation
-                                        $cumulativeUnweightedPoints += $basePoints * $credit;
-                                        
-                                        // Weighted GPA calculation using predefined scales
-                                        $weightedPoints = $basePoints;
-                                        if (stripos($courseTitle, 'AP') !== false) {
-                                            // AP classes: use predefined weighted AP scale
-                                            $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
-                                        } elseif (stripos($courseTitle, 'Honors') !== false) {
-                                            // Honors classes: use predefined weighted Honors scale
-                                            $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
-                                        }
-                                        // Regular classes: no adjustment (weightedPoints = basePoints)
-                                        
-                                        $cumulativeWeightedPoints += $weightedPoints * $credit;
+                                    $basePoints = $gradePoints[$gradeValue];
+                                    
+                                    // Unweighted GPA calculation
+                                    $cumulativeUnweightedPoints += $basePoints * $credit;
+                                    
+                                    // Weighted GPA calculation using predefined scales
+                                    $weightedPoints = $basePoints;
+                                    if (stripos($courseTitle, 'AP') !== false) {
+                                        // AP classes: use predefined weighted AP scale
+                                        $weightedPoints = $gradePoints[$gradeValue . '_ap'] ?? $basePoints;
+                                    } elseif (stripos($courseTitle, 'Honors') !== false) {
+                                        // Honors classes: use predefined weighted Honors scale
+                                        $weightedPoints = $gradePoints[$gradeValue . '_honors'] ?? $basePoints;
                                     }
+                                    // Regular classes: no adjustment (weightedPoints = basePoints)
+                                    
+                                    $cumulativeWeightedPoints += $weightedPoints * $credit;
                                 }
                                 
                                 $cumulativeUnweightedGPA = $cumulativeCreditsAttempted > 0 ? $cumulativeUnweightedPoints / $cumulativeCreditsAttempted : 0;
