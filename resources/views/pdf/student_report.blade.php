@@ -76,12 +76,12 @@ p {
     min-height: 590px;
     max-height: 590px; 
     clear: both;
-    padding: 20px;
+    padding: 15px;
 }
 .mainCol .column {
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    height: 290px;
+    min-height: 290px;
+    max-height: 290px;
 }
 .tabletwo .column {
     position: relative;
