@@ -79,17 +79,17 @@ p {
     padding: 20px;
 }
 .mainCol .column {
-    height: 310px;
-    min-height: 310px;
-    max-height: 310px;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
 }
 .tabletwo .column {
     position: relative;
 }
 .tableHeight {
-    height: 170px;
-    min-height: 170px;
-    max-height: 170px;
+    height: 180px;
+    min-height: 180px;
+    max-height: 180px;
     overflow: hidden;
     width: 100%;
 }
