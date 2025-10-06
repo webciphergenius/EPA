@@ -146,11 +146,11 @@ p {
                     <tr>
                         <td colspan="12" style="text-align: center; font-size: 13px; font-weight: 600; padding: 2px 0 0;">ACADEMIC RECORD</td>
                     </tr>
-                    @if($student->note)
+                    
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; height: 12px; font-style: italic; color: #333">{{ $student->note }}</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; height: 12px; font-style: italic; color: #333"> @if($student->note){{ $student->note }} @endif</td>
                     </tr>
-                    @endif
+                    
                 </tbody>
             </table>
             
