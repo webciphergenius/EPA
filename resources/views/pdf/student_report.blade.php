@@ -83,6 +83,9 @@ p {
     min-height: 320px;
     max-height: 320px;
 }
+.mainCol .column td {
+    height: 15px;
+}
 .mainTableSecond p {
     font-size: 10px;
     line-height: 1.5;
