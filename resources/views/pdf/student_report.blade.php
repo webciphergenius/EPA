@@ -92,7 +92,6 @@ p {
     max-height: 190px;
     overflow: hidden;
     width: 100%;
-    display: block;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -280,7 +279,7 @@ p {
                             <table class="tableHeight" width="100%">
                                 @forelse($records as $record)
                                 <tr>
-                                    <td colspan="10" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
                                     <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                                 </tr>
@@ -293,12 +292,12 @@ p {
                                 </tr>
                                 @endfor
                                 @endforelse
+                                <tr>
+                                    <td colspan="8" style="text-align: left; padding: 9px;"></td>
+                                    <td colspan="1" style="text-align: left; padding: 9px;"></td>
+                                    <td colspan="1" style="text-align: left; padding: 9px;"></td>
+                                </tr>
                             </table>
-                            <tr>
-                                <td colspan="8" style="text-align: left; padding: 9px;"></td>
-                                <td colspan="1" style="text-align: left; padding: 9px;"></td>
-                                <td colspan="1" style="text-align: left; padding: 9px;"></td>
-                            </tr>
                             <tr class="termgpaun">
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
