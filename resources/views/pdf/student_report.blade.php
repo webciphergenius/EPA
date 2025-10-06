@@ -83,8 +83,20 @@ p {
     min-height: 320px;
     max-height: 320px;
 }
-.mainCol .column td, .columns td {
-    height: 12px;
+.tabletwo .column {
+    position: relative;
+}
+.termcread, .termgpawei, .termgpaun {
+    position: absolute;
+}
+.termgpawei {
+    bottom: 24px;
+}
+.termgpaun {
+    bottom: 12px;
+}
+.termcread {
+    bottom: 0;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -290,15 +302,15 @@ p {
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
                             </tr>
-                            <tr>
+                            <tr class="termgpaun">
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
                             </tr>
-                            <tr>
+                            <tr class="termgpawei">
                                 <td colspan="8" style="text-align: left;">Term GPA (weighted):</td>
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($weightedGPA, 3) : 'N/A' }}</td>
                             </tr>
-                            <tr>
+                            <tr class="termcread">
                                 <td colspan="8" style="text-align: left;">Term Credits:</td>
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted }}</td>
     </tr>
