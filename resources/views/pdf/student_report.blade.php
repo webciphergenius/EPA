@@ -270,15 +270,15 @@ p {
                     <table width="100%">
                         <tbody>
                             <td colspan="12" style="text-align: center; font-size: 10px; font-weight: 600; padding-bottom: 9px;">Grade {{ $grade }}: Year {{ $schoolYear }}</td>
-                            <tr>
-                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
-                                <td colspan="1" style="text-align: right; font-size: 10px; text-decoration: underline;">Credits</td>
-                                <td colspan="1" style="text-align: right; font-size: 10px; text-decoration: underline;">Grade</td>
-                            </tr>
                         </tbody>
                     </table>
                             <table class="tableHeight" width="100%">
                                 <tbody>
+                                    <tr>
+                                <td colspan="8" style="text-align: left; font-size: 10px; text-decoration: underline;">Course</td>
+                                <td colspan="1" style="text-align: right; font-size: 10px; text-decoration: underline;">Credits</td>
+                                <td colspan="1" style="text-align: right; font-size: 10px; text-decoration: underline;">Grade</td>
+                            </tr>
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
