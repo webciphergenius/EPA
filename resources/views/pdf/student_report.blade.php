@@ -91,7 +91,6 @@ p {
     min-height: 180px;
     max-height: 180px;
     overflow: hidden;
-    display: block;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -275,6 +274,7 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
+                            
                             <table class="tableHeight" width="100%">
                                 @forelse($records as $record)
                                 <tr>
