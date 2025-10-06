@@ -87,9 +87,9 @@ p {
     position: relative;
 }
 .tableHeight {
-    height: 180px;
-    min-height: 180px;
-    max-height: 180px;
+    height: 190px;
+    min-height: 190px;
+    max-height: 190px;
     overflow: hidden;
     width: 100%;
 }
@@ -710,7 +710,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 240px;">
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 230px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
