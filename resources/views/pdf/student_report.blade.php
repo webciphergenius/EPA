@@ -279,14 +279,14 @@ p {
                             <table class="tableHeight" width="100%">
                                 @forelse($records as $record)
                                 <tr>
-                                    <td colspan="10" style="text-align: left; width: 150px;">{{ $record->coursetitle }}</td>
+                                    <td colspan="10" style="text-align: left; min-width: 150px;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
                                     <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
                                 <tr>
-                                    <td colspan="10" style="text-align: left; width: 150px;"></td>
+                                    <td colspan="10" style="text-align: left;  min-width: 150px;"></td>
                                     <td colspan="1" style="text-align: center;"></td>
                                     <td colspan="1" style="text-align: center;"></td>
                                 </tr>
