@@ -275,8 +275,10 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
-                            
+                        </tbody>
+                    </table>
                             <table class="tableHeight" width="100%">
+                                <tbody>
                                 @forelse($records as $record)
                                 <tr>
                                     <td colspan="10" style="text-align: left; min-width: 150px;">{{ $record->coursetitle }}</td>
@@ -292,7 +294,10 @@ p {
                                 </tr>
                                 @endfor
                                 @endforelse
+                                </tbody>
                             </table>
+                            <table width="100%">
+                                <tbody>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
