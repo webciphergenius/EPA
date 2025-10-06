@@ -91,6 +91,7 @@ p {
     min-height: 180px;
     max-height: 180px;
     overflow: hidden;
+    width: 100%;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -278,7 +279,7 @@ p {
                             <table class="tableHeight" width="100%">
                                 @forelse($records as $record)
                                 <tr>
-                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="10" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
                                     <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                                 </tr>
