@@ -148,7 +148,7 @@ p {
                     </tr>
                     @if($student->note)
                     <tr>
-                        <td colspan="12" style="text-align: center; font-size: 10px; font-style: italic; color: #333">{{ $student->note }}</td>
+                        <td colspan="12" style="text-align: center; font-size: 10px; height: 12px; font-style: italic; color: #333">{{ $student->note }}</td>
                     </tr>
                     @endif
                 </tbody>
