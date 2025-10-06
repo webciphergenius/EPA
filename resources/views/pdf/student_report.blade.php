@@ -279,25 +279,25 @@ p {
                             <table class="tableHeight" width="100%">
                                 @forelse($records as $record)
                                 <tr>
-                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="10" style="text-align: left; width: 150px;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
                                     <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
                                 <tr>
-                                    <td colspan="8" style="text-align: left;"></td>
+                                    <td colspan="10" style="text-align: left; width: 150px;"></td>
                                     <td colspan="1" style="text-align: center;"></td>
                                     <td colspan="1" style="text-align: center;"></td>
                                 </tr>
                                 @endfor
                                 @endforelse
-                                <tr>
-                                    <td colspan="8" style="text-align: left; padding: 9px;"></td>
-                                    <td colspan="1" style="text-align: left; padding: 9px;"></td>
-                                    <td colspan="1" style="text-align: left; padding: 9px;"></td>
-                                </tr>
                             </table>
+                            <tr>
+                                <td colspan="8" style="text-align: left; padding: 9px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 9px;"></td>
+                                <td colspan="1" style="text-align: left; padding: 9px;"></td>
+                            </tr>
                             <tr class="termgpaun">
                                 <td colspan="8" style="text-align: left;">Term GPA (unweighted):</td>
                                 <td colspan="2" style="text-align: right; padding-right: 25px;">{{ $totalCreditsAttempted > 0 ? number_format($unweightedGPA, 3) : 'N/A' }}</td>
