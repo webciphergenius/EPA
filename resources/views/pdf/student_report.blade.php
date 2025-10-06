@@ -86,21 +86,11 @@ p {
 .tabletwo .column {
     position: relative;
 }
-.tabletwo .column td {
-    height: 12px;
-}
-.termcread, .termgpawei, .termgpaun {
-    position: absolute;
-}
-
-.termgpaun {
-    bottom: 24px;
-}
-.termgpawei {
-    bottom: 12px;
-}
-.termcread {
-    bottom: 0;
+.tableHeight {
+    height: 180px;
+    min-height: 180px;
+    max-height: 180px;
+    overflow: hidden;
 }
 .mainTableSecond p {
     font-size: 10px;
@@ -285,22 +275,23 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
                             
-                            @forelse($records as $record)
-                            <tr>
-                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
-                            </tr>
-                            @empty
-                            @for($i = 0; $i < 8; $i++)
-                            <tr>
-                                <td colspan="8" style="text-align: left;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                            </tr>
-                            @endfor
-                            @endforelse
-                            
+                            <table class="tableHeight" width="100%">
+                                @forelse($records as $record)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
+                                </tr>
+                                @empty
+                                @for($i = 0; $i < 8; $i++)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                </tr>
+                                @endfor
+                                @endforelse
+                            </table>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
@@ -381,23 +372,23 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
-                            
-                            @forelse($records as $record)
-                            <tr>
-                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
-                            </tr>
-                            @empty
-                            @for($i = 0; $i < 8; $i++)
-                            <tr>
-                                <td colspan="8" style="text-align: left;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                            </tr>
-                            @endfor
-                            @endforelse
-                            
+                            <table class="tableHeight" width="100%">
+                                @forelse($records as $record)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
+                                </tr>
+                                @empty
+                                @for($i = 0; $i < 8; $i++)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                </tr>
+                                @endfor
+                                @endforelse
+                            </table>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
@@ -479,23 +470,23 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
-                            
-                            @forelse($records as $record)
-                            <tr>
-                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
-                            </tr>
-                            @empty
-                            @for($i = 0; $i < 8; $i++)
-                            <tr>
-                                <td colspan="8" style="text-align: left;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                            </tr>
-                            @endfor
-                            @endforelse
-                            
+                            <table class="tableHeight" width="100%">
+                                @forelse($records as $record)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
+                                </tr>
+                                @empty
+                                @for($i = 0; $i < 8; $i++)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                </tr>
+                                @endfor
+                                @endforelse
+                            </table>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
@@ -575,23 +566,23 @@ p {
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Credits</td>
                                 <td colspan="1" style="text-align: center; font-size: 10px; text-decoration: underline;">Grade</td>
                             </tr>
-                            
-                            @forelse($records as $record)
-                            <tr>
-                                <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
-                                <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
-                            </tr>
-                            @empty
-                            @for($i = 0; $i < 8; $i++)
-                            <tr>
-                                <td colspan="8" style="text-align: left;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                                <td colspan="1" style="text-align: center;"></td>
-                            </tr>
-                            @endfor
-                            @endforelse
-                            
+                            <table class="tableHeight" width="100%">
+                                @forelse($records as $record)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
+                                    <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade }}</td>
+                                </tr>
+                                @empty
+                                @for($i = 0; $i < 8; $i++)
+                                <tr>
+                                    <td colspan="8" style="text-align: left;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                    <td colspan="1" style="text-align: center;"></td>
+                                </tr>
+                                @endfor
+                                @endforelse
+                            </table>
                             <tr>
                                 <td colspan="8" style="text-align: left; padding: 9px;"></td>
                                 <td colspan="1" style="text-align: left; padding: 9px;"></td>
