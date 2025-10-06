@@ -87,11 +87,12 @@ p {
     position: relative;
 }
 .tableHeight {
-    height: 180px;
-    min-height: 180px;
-    max-height: 180px;
+    height: 190px;
+    min-height: 190px;
+    max-height: 190px;
     overflow: hidden;
     width: 100%;
+    display: block;
 }
 .mainTableSecond p {
     font-size: 10px;
