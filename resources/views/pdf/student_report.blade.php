@@ -86,6 +86,9 @@ p {
 .tabletwo .column {
     position: relative;
 }
+.tabletwo .column td {
+    height: 12px;
+}
 .termcread, .termgpawei, .termgpaun {
     position: absolute;
 }
