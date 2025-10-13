@@ -11,6 +11,19 @@
     padding: 0;
     font-size: 10px;
     line-height: 1.2;
+    filter: grayscale(1);
+}
+body:before {
+    content: "";
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url({{ public_path('unofficial-icon.png') }}) no-repeat center;
+    background-size: contain;
+    z-index: -1;
+    transform: translate(-50%, -50%);
 }
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
