@@ -13,6 +13,9 @@
     line-height: 1.2;
     filter: grayscale(1);
 }
+body * {
+    filter: grayscale(1);
+}
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
