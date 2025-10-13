@@ -717,7 +717,7 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
+                        <p class="signaturetxt" style="padding-top: 130px; border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
             </div>
