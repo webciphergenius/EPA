@@ -13,18 +13,6 @@
     line-height: 1.2;
     filter: grayscale(1);
 }
-body:before {
-    content: "";
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: url({{ public_path('unofficial-icon.png') }}) no-repeat center;
-    background-size: contain;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
 .mainTableFirst {
     background: url({{ public_path('script-bg.png') }}) no-repeat;
     background-size: cover;
@@ -115,7 +103,10 @@ p {
 }
 </style> 
 </head>
-<body>
+<body style="position: relative;">
+<div class="unofficial-watermark">
+    <img src="{{ public_path('unofficial-watermark.png') }}" alt="Unofficial Watermark" style="position: absolute; top: 40%; left: 20%; width: 60%; opacity: 0.1; z-index: 1;">
+</div>
 <div class="mainTableFirst">
     <div class="mainTable">
         <div class="pdfHead">
