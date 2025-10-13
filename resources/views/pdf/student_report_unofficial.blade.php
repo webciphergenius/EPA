@@ -17,7 +17,7 @@ body * {
     filter: grayscale(1);
 }
 .mainTableFirst {
-    background: url({{ public_path('script-bg.png') }}) no-repeat;
+    background: url({{ public_path('script-bg-wb.png') }}) no-repeat;
     background-size: cover;
     padding: 30px 70px 20px;
 }
@@ -31,7 +31,7 @@ body * {
     background: url({{ public_path('secondBG.png') }}) no-repeat;
     background-size: cover;
     padding: 50px 70px;
-    color: #295293;
+    color: #000000;
     background-position: center;
 	}
 	.pdfHead {
@@ -102,7 +102,7 @@ p {
     line-height: 1.5;
 }
 .secondHead {
-    color: #295293;
+    color: #000000;
 }
 </style> 
 </head>
@@ -113,9 +113,9 @@ p {
 <div class="mainTableFirst">
     <div class="mainTable">
         <div class="pdfHead">
-            <div class="headImg"><img src="{{ public_path('script-logo.png') }}"></div>
+            <div class="headImg"><img src="{{ public_path('script-logo-wb.png') }}"></div>
             <div class="headTxt">
-		<h2>ELITE PREPARATORY ACADEMY 5</h2>
+		<h2>ELITE PREPARATORY ACADEMY</h2>
                 <p><b>Office of the Registrar</b> <br>
                     452 Lakeside Blvd <br>
                     Hopatcong, NJ 07843 <br>
@@ -717,12 +717,12 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <img src="{{ public_path('script-sign.png') }}" style="width: 230px;">
+                        <img src="{{ public_path('script-sign-wb.png') }}" style="width: 230px;">
                         <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
             </div>
-            <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+            <p class="bottomLast" style="text-align: center; clear: both; color: #000000; padding-top: 30px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
         </div>
     </div>
 </div>
@@ -907,7 +907,7 @@ p {
 		</tbody>
 	</table>
 	</div>
-    <p class="bottomLast" style="text-align: center; clear: both; color: red; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
+    <p class="bottomLast" style="text-align: center; clear: both; color: #000000; padding-top: 50px; font-size: 10px; letter-spacing: 0.5px;">Effective September 1, 2025, this is the authorized transcript format. Any discrepancies indicate unauthorized alterations.</p>
 </div>
 </body>
 </html>
