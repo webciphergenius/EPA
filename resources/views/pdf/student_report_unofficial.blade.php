@@ -304,7 +304,7 @@ p {
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade ?? 'IP' }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ empty($record->grade) ? 'IP' : $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
@@ -418,7 +418,7 @@ p {
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade ?? 'IP' }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ empty($record->grade) ? 'IP' : $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
@@ -534,7 +534,7 @@ p {
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade ?? 'IP' }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ empty($record->grade) ? 'IP' : $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
@@ -648,7 +648,7 @@ p {
                                 <tr>
                                     <td colspan="8" style="text-align: left;">{{ $record->coursetitle }}</td>
                                     <td colspan="1" style="text-align: center;">{{ $record->credit }}</td>
-                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ $record->grade ?? 'IP' }}</td>
+                                    <td colspan="1" style="text-align: left; padding-left: 12px;">{{ empty($record->grade) ? 'IP' : $record->grade }}</td>
                                 </tr>
                                 @empty
                                 @for($i = 0; $i < 8; $i++)
