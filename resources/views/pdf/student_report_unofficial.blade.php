@@ -112,7 +112,7 @@ p {
         <div class="pdfHead">
             <div class="headImg"><img src="{{ public_path('script-logo.png') }}"></div>
             <div class="headTxt">
-		<h2>ELITE PREPARATORY ACADEMY</h2>
+		<h2>ELITE PREPARATORY ACADEMY 5</h2>
                 <p><b>Office of the Registrar</b> <br>
                     452 Lakeside Blvd <br>
                     Hopatcong, NJ 07843 <br>
