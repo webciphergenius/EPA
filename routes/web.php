@@ -18,3 +18,9 @@ Route::get('/admin/students/{record}/preview', function (Student $record) {
     $student = Student::find($record->id);
     return StudentResource::previewStudentPdf($student);
 })->name('filament.admin.resources.students.preview');
+
+Route::get('/admin/students/{record}/preview-unofficial', function (Student $record) {
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
+    return StudentResource::previewUnofficialStudentPdf($student);
+})->name('filament.admin.resources.students.preview-unofficial');

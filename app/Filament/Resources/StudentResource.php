@@ -112,6 +112,43 @@ public static function previewStudentPdf($record)
     ]);
 }
 
+public static function exportUnofficialStudentPdf($record)
+{
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
+    $academicRecords = $student->academicRecords;
+    
+    Log::info('Student data for Unofficial PDF:', $student->toArray());
+    Log::info('Academic records:', $academicRecords->toArray());
+
+    $pdf = Pdf::loadView('pdf.student_report_unofficial', [
+        'student' => $student,
+        'academicRecords' => $academicRecords,
+    ]);
+
+    return response()->streamDownload(
+        fn () => print($pdf->output()),
+        'student_report_unofficial.pdf'
+    );
+}
+
+public static function previewUnofficialStudentPdf($record)
+{
+    // Get fresh data from database to ensure we have the latest counselor information
+    $student = Student::find($record->id);
+    $academicRecords = $student->academicRecords;
+
+    $pdf = Pdf::loadView('pdf.student_report_unofficial', [
+        'student' => $student,
+        'academicRecords' => $academicRecords,
+    ]);
+
+    return response($pdf->output(), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="student_report_unofficial.pdf"',
+    ]);
+}
+
     public static function table(Table $table): Table
     {
         return $table
@@ -142,6 +179,13 @@ public static function previewStudentPdf($record)
                 ->label('Preview')
                 ->action(fn ($record) => static::previewStudentPdf($record))
                 ->url(fn ($record) => route('filament.admin.resources.students.preview', $record), true),
+                Tables\Actions\Action::make('exportUnofficialPdf')
+                ->label('Export Unofficial PDF')
+                ->action(fn ($record) => static::exportUnofficialStudentPdf($record)),
+                Tables\Actions\Action::make('previewUnofficialPdf')
+                ->label('Preview Unofficial PDF')
+                ->action(fn ($record) => static::previewUnofficialStudentPdf($record))
+                ->url(fn ($record) => route('filament.admin.resources.students.preview-unofficial', $record), true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
