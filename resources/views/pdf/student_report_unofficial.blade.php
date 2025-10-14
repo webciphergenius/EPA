@@ -764,7 +764,8 @@ p {
                 </div>
                 <div class="column" style="padding-left:5%;">
                     <div class="signatureImg" style="text-align: center;">
-                        <p class="signaturetxt" style="margin-top: 100px; border-top: 2px solid #000000;">Registrar</p>
+                        <img src="{{ public_path('script-sign.png') }}" style="width: 230px;">
+                        <p class="signaturetxt" style="border-top: 2px solid #000000;">Registrar</p>
                     </div>
                 </div>
             </div>
