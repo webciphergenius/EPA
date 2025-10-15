@@ -873,8 +873,8 @@ p {
                     <td colspan="5" style="text-align: left;">Social Science</td>
                     <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
-                    <td colspan="1" style="text-align: center;">C+</td>
-                    <td colspan="1" style="text-align: left;">2.33</td>
+                    <td colspan="1" style="text-align: left;">C+</td>
+                    <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
 			</tr>
