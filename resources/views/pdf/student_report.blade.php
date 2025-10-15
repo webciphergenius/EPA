@@ -794,82 +794,69 @@ p {
 			<tr>
                     <td colspan="1" style="width: 100px;">B</td>
                     <td colspan="7" style="text-align: left;">-Good</td>
+                    <td colspan="1" style="text-align: left;">A+</td>
+                    <td colspan="1" style="text-align: center;">4.33</td>
+                    <td colspan="1" style="text-align: center;">4.83</td>
+                    <td colspan="1" style="text-align: center;">5.33</td>
                     
 			</tr>
                 <tr>
                     <<td colspan="1" style="width: 100px;">C</td>
                     <td colspan="7" style="text-align: left;">-Fair</td>
-                   
-			</tr>
-                <tr>
-                    <td colspan="1" style="width: 100px;">D</td>
-                    <td colspan="7" style="text-align: left;">-Barely Passed</td>
-                    
-			</tr>
-			<tr>
-                    <td colspan="1" style="width: 100px;">F</td>
-                    <td colspan="7" style="text-align: left;">-Failure</td>
-                    
-			</tr>
-			<tr>
-                    <td colspan="1" style="width: 100px;">I</td>
-                    <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
-                    <td colspan="1" style="text-align: left;">A+</td>
-                    <td colspan="1" style="text-align: center;">4.33</td>
-                    <td colspan="1" style="text-align: center;">4.83</td>
-                    <td colspan="1" style="text-align: center;">5.33</td>
-			</tr>
-			<tr>
-                    <td colspan="1" style="width: 100px;"></td>
-                    <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
                     <td colspan="1" style="text-align: left;">A</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
                     <td colspan="1" style="text-align: center;">4.50</td>
                     <td colspan="1" style="text-align: center;">5.00</td>
 			</tr>
-			<tr>
-                    <td colspan="1" style="width: 100px;"></td>
-                    <td colspan="7" style="text-align: left;"></td>
+                <tr>
+                    <td colspan="1" style="width: 100px;">D</td>
+                    <td colspan="7" style="text-align: left;">-Barely Passed</td>
                     <td colspan="1" style="text-align: left;">A-</td>
                     <td colspan="1" style="text-align: center;">3.67</td>
                     <td colspan="1" style="text-align: center;">4.17</td>
                     <td colspan="1" style="text-align: center;">4.67</td>
 			</tr>
 			<tr>
-                    <td colspan="8" style="text-align: left;">The grades A, B, C, and D may be modified by plus (+) or minus (-) suffixes.</td>
+                    <td colspan="1" style="width: 100px;">F</td>
+                    <td colspan="7" style="text-align: left;">-Failure</td>
                     <td colspan="1" style="text-align: left;">B+</td>
                     <td colspan="1" style="text-align: center;">3.33</td>
                     <td colspan="1" style="text-align: center;">3.83</td>
                     <td colspan="1" style="text-align: center;">3.00</td>
 			</tr>
 			<tr>
-                    <td colspan="7" style="text-align: center; font-weight: 600;">Credits Required for Graduation</td>
-                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="width: 100px;">I</td>
+                    <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
                     <td colspan="1" style="text-align: left;">B</td>
                     <td colspan="1" style="text-align: center;">3.00</td>
                     <td colspan="1" style="text-align: center;">3.50</td>
                     <td colspan="1" style="text-align: center;">4.00</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">English</td>
-                    <td colspan="2" style="text-align: left;">16</td>
-                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="width: 100px;"></td>
+                    <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
                     <td colspan="1" style="text-align: left;">B-</td>
                     <td colspan="1" style="text-align: center;">2.67</td>
                     <td colspan="1" style="text-align: center;">3.17</td>
                     <td colspan="1" style="text-align: center;">3.67</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Social Science</td>
-                    <td colspan="2" style="text-align: left;">16</td>
-                    <td colspan="1" style="text-align: center;"></td>
+                    <td colspan="1" style="width: 100px;"></td>
+                    <td colspan="7" style="text-align: left;"></td>
                     <td colspan="1" style="text-align: left;">C+</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
                     <td colspan="1" style="text-align: center;">2.33</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Mathematics</td>
+                    <td colspan="8" style="text-align: left;">The grades A, B, C, and D may be modified by plus (+) or minus (-) suffixes.</td>
+			</tr>
+			<tr>
+                    <td colspan="7" style="text-align: center; font-weight: 600;">Credits Required for Graduation</td>
+                    <td colspan="1" style="text-align: center;"></td>
+			</tr>
+			<tr>
+                    <td colspan="5" style="text-align: left;">English</td>
                     <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">C</td>
@@ -878,7 +865,7 @@ p {
                     <td colspan="1" style="text-align: center;">2.00</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Science</td>
+                    <td colspan="5" style="text-align: left;">Social Science</td>
                     <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">C-</td>
@@ -887,8 +874,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.67</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Health/Physical Education</td>
-                    <td colspan="2" style="text-align: left;">12</td>
+                    <td colspan="5" style="text-align: left;">Mathematics</td>
+                    <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">D+</td>
                     <td colspan="1" style="text-align: center;">1.33</td>
@@ -896,8 +883,8 @@ p {
                     <td colspan="1" style="text-align: center;">1.33</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Second Language</td>
-                    <td colspan="2" style="text-align: left;">9</td>
+                    <td colspan="5" style="text-align: left;">Science</td>
+                    <td colspan="2" style="text-align: left;">16</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">D</td>
                     <td colspan="1" style="text-align: center;">1.00</td>
@@ -905,31 +892,40 @@ p {
                     <td colspan="1" style="text-align: center;">1.00</td>
 			</tr>
 			<tr>
-                    <td colspan="5" style="text-align: left;">Art</td>
-                    <td colspan="2" style="text-align: left;">9</td>
+                    <td colspan="5" style="text-align: left;">Health/Physical Education</td>
+                    <td colspan="2" style="text-align: left;">12</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">D-</td>
                     <td colspan="1" style="text-align: center;">0.67</td>
                     <td colspan="1" style="text-align: center;">0.67</td>
                     <td colspan="1" style="text-align: center;">0.67</td>
 			</tr>
-            <tr>
-                    <td colspan="5" style="text-align: left;">Electives</td>
-                    <td colspan="2" style="text-align: left;">12</td>
+			<tr>
+                    <td colspan="5" style="text-align: left;">Second Language</td>
+                    <td colspan="2" style="text-align: left;">9</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">F</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
 			</tr>
-            <tr>
-                    <td colspan="5" style="text-align: left;">Research Project</td>
-                    <td colspan="2" style="text-align: left;">6</td>
+			<tr>
+                    <td colspan="5" style="text-align: left;">Art</td>
+                    <td colspan="2" style="text-align: left;">9</td>
                     <td colspan="1" style="text-align: center;"></td>
                     <td colspan="1" style="text-align: left;">I</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
                     <td colspan="1" style="text-align: center;">0.00</td>
+			</tr>
+            <tr>
+                    <td colspan="5" style="text-align: left;">Electives</td>
+                    <td colspan="2" style="text-align: left;">12</td>
+                    
+			</tr>
+            <tr>
+                    <td colspan="5" style="text-align: left;">Research Project</td>
+                    <td colspan="2" style="text-align: left;">6</td>
 			</tr>
 
 		</tbody>
