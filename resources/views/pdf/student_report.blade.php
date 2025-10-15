@@ -168,7 +168,7 @@ p {
                     
                     // Define grade points for calculations
         $gradePoints = [
-            'A+' => 4.0,
+            'A+' => 4.33,
             'A'  => 4.0,
             'A-' => 3.67,
             'B+' => 3.33,
@@ -815,7 +815,7 @@ p {
                     <td colspan="1" style="width: 100px;">I</td>
                     <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
                     <td colspan="1" style="text-align: center;">A+</td>
-                    <td colspan="1" style="text-align: center;">4.00</td>
+                    <td colspan="1" style="text-align: center;">4.33</td>
                     <td colspan="1" style="text-align: center;">4.83</td>
                     <td colspan="1" style="text-align: center;">5.33</td>
 			</tr>

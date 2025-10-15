@@ -22,7 +22,7 @@ if (!function_exists('calculateGPA')) {
 
         // Define grade points for Unweighted, Weighted Honors, and Weighted AP scales
         $gradePoints = [
-            'A+' => ['unweighted' => 4.00, 'weighted_honors' => 4.83, 'weighted_ap' => 5.33],
+            'A+' => ['unweighted' => 4.33, 'weighted_honors' => 4.83, 'weighted_ap' => 5.33],
             'A'  => ['unweighted' => 4.00, 'weighted_honors' => 4.50, 'weighted_ap' => 5.00],
             'A-' => ['unweighted' => 3.67, 'weighted_honors' => 4.17, 'weighted_ap' => 4.67],
             'B+' => ['unweighted' => 3.33, 'weighted_honors' => 3.83, 'weighted_ap' => 4.33],
