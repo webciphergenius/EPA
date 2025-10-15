@@ -833,26 +833,17 @@ p {
 			<tr>
                     <td colspan="1" style="width: 100px;">I</td>
                     <td colspan="7" style="text-align: left;">-Work incomplete, due to circumstances beyond</td>
-                    <td colspan="1" style="text-align: center;">A+</td>
-                    <td colspan="1" style="text-align: center;">4.00</td>
-                    <td colspan="1" style="text-align: center;">4.83</td>
-                    <td colspan="1" style="text-align: center;">5.33</td>
+                    
 			</tr>
 			<tr>
                     <td colspan="1" style="width: 100px;"></td>
                     <td colspan="7" style="text-align: left;">-the student's control, but of passing quality</td>
-                    <td colspan="1" style="text-align: center;">A</td>
-                    <td colspan="1" style="text-align: center;">4.00</td>
-                    <td colspan="1" style="text-align: center;">4.50</td>
-                    <td colspan="1" style="text-align: center;">5.00</td>
+                    
 			</tr>
 			<tr>
                     <td colspan="1" style="width: 100px;"></td>
                     <td colspan="7" style="text-align: left;"></td>
-                    <td colspan="1" style="text-align: center;">A-</td>
-                    <td colspan="1" style="text-align: center;">3.67</td>
-                    <td colspan="1" style="text-align: center;">4.17</td>
-                    <td colspan="1" style="text-align: center;">4.67</td>
+                    
 			</tr>
 			<tr>
                     <td colspan="8" style="text-align: left;">The grades A, B, C, and D may be modified by plus (+) or minus (-) suffixes.</td>
