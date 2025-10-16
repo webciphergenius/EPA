@@ -825,10 +825,7 @@ p {
 			<tr>
                     <td colspan="1" style="width: 100px;">F</td>
                     <td colspan="7" style="text-align: left;">-Failure</td>
-                    <td colspan="1" style="text-align: left;">B+</td>
-                    <td colspan="1" style="text-align: center;">3.33</td>
-                    <td colspan="1" style="text-align: center;">3.83</td>
-                    <td colspan="1" style="text-align: center;">4.33</td>
+   
 			</tr>
 			<tr>
                     <td colspan="1" style="width: 100px;">I</td>
