@@ -931,12 +931,6 @@ p {
                     <td colspan="2" style="text-align: left;">12</td>
                     <td colspan="1" style="text-align: center;"></td>
 			</tr>
-            <tr>
-                    <td colspan="5" style="text-align: left;">Research Project</td>
-                    <td colspan="2" style="text-align: left;">6</td>
-                    <td colspan="1" style="text-align: center;"></td>
-			</tr>
-
 		</tbody>
 	</table>
 	</div>
